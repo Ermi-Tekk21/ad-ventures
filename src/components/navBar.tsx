@@ -1,0 +1,320 @@
+"use client"
+import React, { useState, useEffect } from 'react';
+import { Button } from "./ui/button";
+import {
+    Sheet,
+    SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet"
+
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog"
+
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+
+const NavBar: React.FC = () => {
+    const [showNavbar, setShowNavbar] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+    const [socialVisible, setSocialVisible] = useState(true);
+    const [isHome, setIsHome] = useState(false);
+    const [isAbout, setIsAbout] = useState(false);
+    const [isContact, setIsContact] = useState(false);
+    const [isPricing, setIsPricing] = useState(false);
+    const [isDrivers, setIsDrivers] = useState(false);
+    const [isBookAd, setIsBookAd] = useState(true);
+
+    const pathname = usePathname();
+
+    useEffect(() => {
+        //home
+        if (pathname === '/') {
+            setIsHome(true);
+        } else {
+            setIsHome(false);
+        }
+        //about us
+        if (pathname === '/about-us') {
+            setIsAbout(true);
+        } else {
+            setIsAbout(false);
+        }
+        //contact us
+        if (pathname === '/contact-us') {
+            setIsContact(true);
+        } else {
+            setIsContact(false);
+        }
+        //pricing
+        if (pathname === '/pricing') {
+            setIsPricing(true);
+        } else {
+            setIsPricing(false);
+        }
+        //bookad
+        if (pathname === '/book-ad') {
+            setIsBookAd(true);
+        } else {
+            setIsBookAd(false);
+        }
+        //drivers
+        if (pathname === '/drivers') {
+            setIsDrivers(true);
+        }
+        else {
+            setIsDrivers(false);
+        }
+        //contact us
+        if (pathname === '/contact-us') {
+            setIsContact(true);
+        }
+        else {
+            setIsContact(false);
+        }
+        
+
+
+    }, [pathname]);
+
+    useEffect(() => {
+        const handleScroll = () => {
+
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY < 100) {
+                // Hide navbar when scrolling down
+                setShowNavbar(true);
+            } else if (currentScrollY > lastScrollY) {
+                setShowNavbar(false);
+            }
+            else {
+                // Show navbar when scrolling up
+                setShowNavbar(true);
+            }
+            if (currentScrollY > 0) {
+                setSocialVisible(false);
+            } else {
+                setSocialVisible(true);
+            }
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [lastScrollY]);
+
+    return (
+        <header className={`navbar shadow-md z-40 w-full ${showNavbar ? 'visible fixed' : 'hidden fixed'}`}>
+            {socialVisible && (
+                <div className="flex max-sm:hiden max-sm:flex-col justify-between max-lg:px-3 lg:px-6 bg-slate-100">
+                    <div>
+                        <ul className="flex justify-between gap-5 ">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" /></svg>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul className="flex gap-2 max-sm:justify-between font-light max-md:text-xs text-sm">
+                            <li className="flex gap-3 items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+                                +251-493097000
+                            </li>
+                            <li className="flex gap-3 items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-smartphone"><rect width="14" height="20" x="5" y="2" rx="2" ry="2" /><path d="M12 18h.01" /></svg>
+                                09493097000
+                            </li>
+                            <li className="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>adventures@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+            )}
+
+            <nav className="bg-navBg sticky top-0 items-center text-white flex justify-between max-md:px-5 max-md:py-4 md:px-8 md:py-7 lg:py-5 lg:px-12 w-full">
+                <div className="">
+                    <h1 className="md:text-2xl font-heading font-bold">Ad Ventures</h1>
+                </div>
+                <nav>
+                    <ul className="flex font-light gap-10 max-md:hidden">
+                        <li className={`flex flex-col mb-4 ${isHome? 'font-semibold': 'font-light'}`}>
+                            <Link href='/'>Home</Link>
+                            {
+                                isHome && (
+                                    <hr className="border-b-4 border-red-700" />
+                                )
+                            }
+
+                        </li>
+                        <li className={`flex flex-col ${isAbout? 'font-semibold': 'font-light'}`}>
+                            <Link href='/about-us'>About US</Link>
+                            {
+                                isAbout && (
+                                    <hr className="border-b-4 border-red-700" />
+                                )
+                            }
+                        </li>
+                        <li className={`flex flex-col ${isDrivers? 'font-semibold': 'font-light'}`}>
+                            <Link href='/drivers'>Drivers</Link>
+                            {
+                                isDrivers && (
+                                    <hr className="border-b-4 border-red-700" />
+                                )
+                            }
+                        </li>
+                        <li className={`flex flex-col ${isBookAd? 'font-semibold': 'font-light'}`}>
+                            <Link href='/book-ad'>Book Ad</Link>
+                            {
+                                isBookAd && (
+                                    <hr className="border-b-4 border-red-700" />
+                                )
+                            }
+                        </li>
+                        <li className={`flex flex-col ${isPricing? 'font-semibold': 'font-light'}`}>
+                            <Link href='/pricing'>Pricing</Link>
+                            {
+                                isPricing && (
+                                    <hr className="border-b-4 border-red-700" />
+                                )
+                            }
+                        </li>
+                        <li className={`flex flex-col ${isContact? 'font-semibold': 'font-light'}`}>
+                            <Link href='/contact-us'>Contact US</Link>
+                            {
+                                isContact && (
+                                    <hr className="border-b-4 border-red-700" />
+                                )
+                            }
+                        </li>
+                        <li>
+
+                            <Dialog>
+                                <DialogTrigger>
+                                    <Button className="bg-red-800">Get Started</Button>
+                                </DialogTrigger>
+                                <DialogContent>
+                                    <DialogHeader>
+                                        <DialogTitle className='mb-5'>Describe Your Role.</DialogTitle>
+                                        <DialogDescription className='flex gap-8 justify-around'>
+                                            <div><Card>
+                                                <CardHeader>
+
+                                                    <CardDescription>do u want to advertise? click below</CardDescription>
+                                                </CardHeader>
+                                                <CardContent>
+                                                    <Button>Book Ad</Button>
+                                                </CardContent>
+                                            </Card>
+                                            </div>
+                                            <div><Card>
+                                                <CardHeader>
+
+                                                    <CardDescription>join us and make more money</CardDescription>
+                                                </CardHeader>
+                                                <CardContent>
+                                                    <Button>Driver</Button>
+                                                </CardContent>
+
+                                            </Card>
+                                            </div>
+                                        </DialogDescription>
+                                    </DialogHeader>
+                                </DialogContent>
+                            </Dialog>
+
+
+                        </li>
+                    </ul>
+                </nav>
+                <div className="md:hidden">
+                    <Sheet>
+                        <SheetTrigger>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-align-justify"><line x1="3" x2="21" y1="6" y2="6" /><line x1="3" x2="21" y1="12" y2="12" /><line x1="3" x2="21" y1="18" y2="18" /></svg>
+
+                        </SheetTrigger>
+                        <SheetContent>
+                            <SheetHeader>
+                                <SheetDescription>
+                                    <ul className="flex text-center flex-col font-light gap-10 md:hidden px-16">
+                                        <li className="flex flex-col font-semibold gap-3">Home
+                                            <hr className="border-b-4 border-red-700" />
+                                        </li>
+                                        <li>About US</li>
+                                        <li>Pricing</li>
+                                        <li>Contact US</li>
+                                        <li>
+                                            <Dialog>
+                                                <DialogTrigger>
+                                                    <Button className="bg-red-800">Get Started</Button>
+                                                </DialogTrigger>
+                                                <DialogContent>
+                                                    <DialogHeader>
+                                                        <DialogTitle className='mb-5'>Describe Your Role.</DialogTitle>
+                                                        <DialogDescription className='flex max-sm:flex-col gap-8 justify-around'>
+                                                            <div><Card>
+                                                                <CardHeader>
+                                                                    <CardDescription>do u want to advertise? click below</CardDescription>
+                                                                </CardHeader>
+                                                                <CardContent>
+                                                                    <Button>Book Ad</Button>
+                                                                </CardContent>
+                                                            </Card>
+                                                            </div>
+                                                            <div><Card>
+                                                                <CardHeader>
+                                                                    <CardDescription>join us and make more money</CardDescription>
+                                                                </CardHeader>
+                                                                <CardContent>
+                                                                    <Button>Driver</Button>
+                                                                </CardContent>
+                                                            </Card>
+                                                            </div>
+                                                        </DialogDescription>
+                                                    </DialogHeader>
+                                                </DialogContent>
+                                            </Dialog>
+                                        </li>
+                                    </ul>
+                                </SheetDescription>
+                            </SheetHeader>
+                        </SheetContent>
+                    </Sheet>
+                </div>
+            </nav>
+            <nav>
+            </nav>
+
+
+        </header>
+    )
+}
+
+export default NavBar;
