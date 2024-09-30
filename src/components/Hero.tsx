@@ -153,7 +153,7 @@ const Hero: React.FC = () => {
                             </CardHeader>
                             <CardContent>
                                 <div className="font-[sans-serif] max-w-[410px] h-auto p-6 rounded-lg mx-auto shadow-[0_6px_18px_-6px_rgba(193,195,248)] bg-white relative mt-12">
-                                    <Image width={16} src="https://readymadeui.com/profile_2.webp" alt="badge"></Image>
+                                    <Image width={16} height={14} src="https://readymadeui.com/profile_2.webp" alt="badge"></Image>
                                     <div className="mt-6 text-center">
                                         <div>
                                             <h4 className="text-sm font-extrabold text-gray-800">Mark Adair</h4>
