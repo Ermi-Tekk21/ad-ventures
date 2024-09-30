@@ -50,7 +50,6 @@ const Footer: React.FC = () => {
             setIsPricing(false)
         }
 
-
         if (pathname === "/book-ad") {
             setIsBookAd(true)
         } else {
