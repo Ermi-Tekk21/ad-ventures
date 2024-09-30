@@ -43,7 +43,6 @@ const Footer: React.FC = () => {
             setIsDrivers(false)
         }
 
-
         if (pathname === "/pricing") {
             setIsPricing(true)
         } else {
