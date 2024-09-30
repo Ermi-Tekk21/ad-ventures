@@ -1,12 +1,10 @@
 "use client"
-import React, { useState, useEffect } from 'react';
 import { Button } from "./ui/button";
 import {
     Sheet,
     SheetContent,
     SheetDescription,
     SheetHeader,
-    SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
 
@@ -23,12 +21,11 @@ import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
-    CardTitle,
 } from "@/components/ui/card"
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
 
 const NavBar: React.FC = () => {
     const [showNavbar, setShowNavbar] = useState(true);
@@ -39,59 +36,59 @@ const NavBar: React.FC = () => {
     const [isContact, setIsContact] = useState(false);
     const [isPricing, setIsPricing] = useState(false);
     const [isDrivers, setIsDrivers] = useState(false);
-    const [isBookAd, setIsBookAd] = useState(true);
+    const [isBookAd, setIsBookAd] = useState(false);
 
     const pathname = usePathname();
 
     useEffect(() => {
-        //home
-        if (pathname === '/') {
-            setIsHome(true);
-        } else {
-            setIsHome(false);
-        }
-        //about us
-        if (pathname === '/about-us') {
-            setIsAbout(true);
-        } else {
-            setIsAbout(false);
-        }
-        //contact us
-        if (pathname === '/contact-us') {
-            setIsContact(true);
-        } else {
-            setIsContact(false);
-        }
-        //pricing
-        if (pathname === '/pricing') {
-            setIsPricing(true);
-        } else {
-            setIsPricing(false);
-        }
-        //bookad
-        if (pathname === '/book-ad') {
-            setIsBookAd(true);
-        } else {
-            setIsBookAd(false);
-        }
-        //drivers
-        if (pathname === '/drivers') {
-            setIsDrivers(true);
-        }
-        else {
-            setIsDrivers(false);
-        }
-        //contact us
-        if (pathname === '/contact-us') {
-            setIsContact(true);
-        }
-        else {
-            setIsContact(false);
-        }
-        
 
+        if (pathname === "/") {
+            setIsHome(true)
+        } else {
+            setIsHome(false)
+        }
+
+        if (pathname === "/about-us") {
+            setIsAbout(true)
+        } else {
+            setIsAbout(false)
+        }
+
+
+        if (pathname === "/contact-us") {
+            setIsContact(true)
+        } else {
+            setIsContact(false)
+        }
+
+
+        if (pathname === "/drivers") {
+            setIsDrivers(true)
+        } else {
+            setIsDrivers(false)
+        }
+
+
+        if (pathname === "/pricing") {
+            setIsPricing(true)
+        } else {
+            setIsPricing(false)
+        }
+
+
+        if (pathname === "/book-ad") {
+            setIsBookAd(true)
+        } else {
+            setIsBookAd(false)
+        }
 
     }, [pathname]);
+
+
+
+
+
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -160,12 +157,86 @@ const NavBar: React.FC = () => {
             )}
 
             <nav className="bg-navBg sticky top-0 items-center text-white flex justify-between max-md:px-5 max-md:py-4 md:px-8 md:py-7 lg:py-5 lg:px-12 w-full">
-                <div className="">
-                    <h1 className="md:text-2xl font-heading font-bold">Ad Ventures</h1>
+                <div className="max-md:hidden">
+                    <Link href='/' className="md:text-2xl text-white font-heading font-bold">Ad Ventures</Link>
+
+                </div>
+                <div>
+                    <div className="md:hidden">
+                        <Sheet>
+                            <SheetTrigger className='mt-1'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-align-justify"><line x1="3" x2="21" y1="6" y2="6" /><line x1="3" x2="21" y1="12" y2="12" /><line x1="3" x2="21" y1="18" y2="18" /></svg>
+                            </SheetTrigger>
+                            <SheetContent>
+                                <SheetHeader>
+                                    <SheetDescription>
+                                        <div className="-mt-2 -ml-16 items-start">
+                                            <h1 className="md:text-2xl text-black font-heading font-bold">Ad Ventures</h1>
+                                        </div>
+                                        <ul className="flex flex-col gap-4 mt-8 px-4 items-start">
+                                            <li className={`flex items-center gap-4 ${isHome ? 'font-semibold' : 'font-light'}`}>
+                                                {
+                                                    isHome && (
+                                                        <hr className="border-b-4 -ml-9 rotate-90 w-5 border-red-700" />
+                                                    )
+                                                }
+                                                <Link href='/'>Home</Link>
+
+                                            </li>
+                                            <li className={`flex items-center gap-4 ${isAbout ? 'font-semibold' : 'font-light'}`}>
+                                                {
+                                                    isAbout && (
+                                                        <hr className="border-b-4 -ml-9 rotate-90 w-5 border-red-700" />
+                                                    )
+                                                }
+                                                <Link href='/about-us'>About Us</Link>
+
+                                            </li>
+                                            <li className={`flex items-center gap-4 ${isDrivers ? 'font-semibold' : 'font-light'}`}>
+                                                {
+                                                    isDrivers && (
+                                                        <hr className="border-b-4 -ml-9 rotate-90 w-5 border-red-700" />
+                                                    )
+                                                }
+                                                <Link href='/drivers'>Drivers</Link>
+
+                                            </li>
+                                            <li className={`flex items-center gap-4 ${isBookAd ? 'font-semibold' : 'font-light'}`}>
+                                                {
+                                                    isBookAd && (
+                                                        <hr className="border-b-4 -ml-9 rotate-90 w-5 border-red-700" />
+                                                    )
+                                                }
+                                                <Link href='/book-ad'>Book Ad</Link>
+
+                                            </li>
+                                            <li className={`flex items-center gap-4 ${isPricing ? 'font-semibold' : 'font-light'}`}>
+                                                {
+                                                    isPricing && (
+                                                        <hr className="border-b-4 -ml-9 rotate-90 w-5 border-red-700" />
+                                                    )
+                                                }
+                                                <Link href='/pricing'>Pricing</Link>
+
+                                            </li>
+                                            <li className={`flex items-center gap-4 ${isContact ? 'font-semibold' : 'font-light'}`}>
+                                                {
+                                                    isContact && (
+                                                        <hr className="border-b-4 -ml-9 rotate-90 w-5 border-red-700" />
+                                                    )
+                                                }
+                                                <Link href='/contact-us'>Contact US</Link>
+                                            </li>
+                                        </ul>
+                                    </SheetDescription>
+                                </SheetHeader>
+                            </SheetContent>
+                        </Sheet>
+                    </div>
                 </div>
                 <nav>
                     <ul className="flex font-light gap-10 max-md:hidden">
-                        <li className={`flex flex-col mb-4 ${isHome? 'font-semibold': 'font-light'}`}>
+                        <li className={`flex flex-col gap-4 ${isHome ? 'font-semibold' : 'font-light'}`}>
                             <Link href='/'>Home</Link>
                             {
                                 isHome && (
@@ -174,7 +245,7 @@ const NavBar: React.FC = () => {
                             }
 
                         </li>
-                        <li className={`flex flex-col ${isAbout? 'font-semibold': 'font-light'}`}>
+                        <li className={`flex flex-col gap-4 ${isAbout ? 'font-semibold' : 'font-light'}`}>
                             <Link href='/about-us'>About US</Link>
                             {
                                 isAbout && (
@@ -182,7 +253,7 @@ const NavBar: React.FC = () => {
                                 )
                             }
                         </li>
-                        <li className={`flex flex-col ${isDrivers? 'font-semibold': 'font-light'}`}>
+                        <li className={`flex flex-col gap-4 ${isDrivers ? 'font-semibold' : 'font-light'}`}>
                             <Link href='/drivers'>Drivers</Link>
                             {
                                 isDrivers && (
@@ -190,7 +261,7 @@ const NavBar: React.FC = () => {
                                 )
                             }
                         </li>
-                        <li className={`flex flex-col ${isBookAd? 'font-semibold': 'font-light'}`}>
+                        <li className={`flex flex-col gap-4 ${isBookAd ? 'font-semibold' : 'font-light'}`}>
                             <Link href='/book-ad'>Book Ad</Link>
                             {
                                 isBookAd && (
@@ -198,7 +269,7 @@ const NavBar: React.FC = () => {
                                 )
                             }
                         </li>
-                        <li className={`flex flex-col ${isPricing? 'font-semibold': 'font-light'}`}>
+                        <li className={`flex flex-col gap-4 ${isPricing ? 'font-semibold' : 'font-light'}`}>
                             <Link href='/pricing'>Pricing</Link>
                             {
                                 isPricing && (
@@ -206,7 +277,7 @@ const NavBar: React.FC = () => {
                                 )
                             }
                         </li>
-                        <li className={`flex flex-col ${isContact? 'font-semibold': 'font-light'}`}>
+                        <li className={`flex flex-col gap-4 ${isContact ? 'font-semibold' : 'font-light'}`}>
                             <Link href='/contact-us'>Contact US</Link>
                             {
                                 isContact && (
@@ -249,70 +320,15 @@ const NavBar: React.FC = () => {
                                     </DialogHeader>
                                 </DialogContent>
                             </Dialog>
-
-
                         </li>
                     </ul>
                 </nav>
                 <div className="md:hidden">
-                    <Sheet>
-                        <SheetTrigger>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-align-justify"><line x1="3" x2="21" y1="6" y2="6" /><line x1="3" x2="21" y1="12" y2="12" /><line x1="3" x2="21" y1="18" y2="18" /></svg>
-
-                        </SheetTrigger>
-                        <SheetContent>
-                            <SheetHeader>
-                                <SheetDescription>
-                                    <ul className="flex text-center flex-col font-light gap-10 md:hidden px-16">
-                                        <li className="flex flex-col font-semibold gap-3">Home
-                                            <hr className="border-b-4 border-red-700" />
-                                        </li>
-                                        <li>About US</li>
-                                        <li>Pricing</li>
-                                        <li>Contact US</li>
-                                        <li>
-                                            <Dialog>
-                                                <DialogTrigger>
-                                                    <Button className="bg-red-800">Get Started</Button>
-                                                </DialogTrigger>
-                                                <DialogContent>
-                                                    <DialogHeader>
-                                                        <DialogTitle className='mb-5'>Describe Your Role.</DialogTitle>
-                                                        <DialogDescription className='flex max-sm:flex-col gap-8 justify-around'>
-                                                            <div><Card>
-                                                                <CardHeader>
-                                                                    <CardDescription>do u want to advertise? click below</CardDescription>
-                                                                </CardHeader>
-                                                                <CardContent>
-                                                                    <Button>Book Ad</Button>
-                                                                </CardContent>
-                                                            </Card>
-                                                            </div>
-                                                            <div><Card>
-                                                                <CardHeader>
-                                                                    <CardDescription>join us and make more money</CardDescription>
-                                                                </CardHeader>
-                                                                <CardContent>
-                                                                    <Button>Driver</Button>
-                                                                </CardContent>
-                                                            </Card>
-                                                            </div>
-                                                        </DialogDescription>
-                                                    </DialogHeader>
-                                                </DialogContent>
-                                            </Dialog>
-                                        </li>
-                                    </ul>
-                                </SheetDescription>
-                            </SheetHeader>
-                        </SheetContent>
-                    </Sheet>
+                    <Link href='/' className="md:text-2xl text-white font-heading font-bold">Ad Ventures</Link>
                 </div>
             </nav>
             <nav>
             </nav>
-
-
         </header>
     )
 }
