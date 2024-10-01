@@ -99,49 +99,25 @@ const Hero: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="md:p-5">
-                <div className="trustedBy w-full bg-navBg rounded-lg">
+
+            {/* Trusted by section */}
+            <div className="p-5">
+                <div className="trustedBy w-full bg-navBg rounded-lg p-">
                     <p className="text-center text-3xl font-bold p-5 text-white">Trusted by</p>
                     <div className="flex max-md:flex-col max-md:items-center max-md:justify-center gap-5 p-6 justify-between">
                         <Card>
-                            <CardHeader>
-
-                                <CardDescription>do u want to advertise? click below</CardDescription>
-                            </CardHeader>
                             <CardContent>
-                                <Button>Book Ad</Button>
+                                <Image className="" src={`https://images.ctfassets.net/4cd45et68cgf/4nBnsuPq03diC5eHXnQYx/d48a4664cdc48b6065b0be2d0c7bc388/Netflix-Logo.jpg`} alt="netflix" width={40} height={40}></Image>
                             </CardContent>
                         </Card>
-                        <Card>
-                            <CardHeader>
 
-                                <CardDescription>do u want to advertise? click below</CardDescription>
-                            </CardHeader>
-                            <CardContent>
-                                <Button>Book Ad</Button>
-                            </CardContent>
-                        </Card><Card>
-                            <CardHeader>
-
-                                <CardDescription>do u want to advertise? click below</CardDescription>
-                            </CardHeader>
-                            <CardContent>
-                                <Button>Book Ad</Button>
-                            </CardContent>
-                        </Card><Card>
-                            <CardHeader>
-
-                                <CardDescription>do u want to advertise? click below</CardDescription>
-                            </CardHeader>
-                            <CardContent>
-                                <Button>Book Ad</Button>
-                            </CardContent>
-                        </Card>
                     </div>
                 </div>
             </div>
 
-            <div className="md:p-5">
+
+            {/* testimonial */}
+            <div className="p-5">
                 <div className="trustedBy w-full bg-navBg rounded-lg p-">
                     <p className="text-center text-3xl font-bold p-5 text-white">Testimonial</p>
                     <div className="flex max-md:flex-col max-md:items-center max-md:justify-center gap-5 p-6 justify-between">
