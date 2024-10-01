@@ -1,25 +1,155 @@
+"use client"
+import Link from "next/link";
+import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
+
 const Footer: React.FC = () => {
+    const [isHome, setIsHome] = useState(false);
+    const [isAbout, setIsAbout] = useState(false);
+    const [isContact, setIsContact] = useState(false);
+    const [isPricing, setIsPricing] = useState(false);
+    const [isDrivers, setIsDrivers] = useState(false);
+    const [isBookAd, setIsBookAd] = useState(false);
+    const [isSupport, setIsSupport] = useState(false);
+    const [isPrivacy, setIsPrivacy] = useState(false);
+
+    const pathname = usePathname();
+
+    useEffect(() => {
+
+        if (pathname === "/") {
+            setIsHome(true)
+        } else {
+            setIsHome(false)
+        }
+
+        if (pathname === "/about-us") {
+            setIsAbout(true)
+        } else {
+            setIsAbout(false)
+        }
+
+
+        if (pathname === "/contact-us") {
+            setIsContact(true)
+        } else {
+            setIsContact(false)
+        }
+
+
+        if (pathname === "/drivers") {
+            setIsDrivers(true)
+        } else {
+            setIsDrivers(false)
+        }
+
+        if (pathname === "/pricing") {
+            setIsPricing(true)
+        } else {
+            setIsPricing(false)
+        }
+
+        if (pathname === "/book-ad") {
+            setIsBookAd(true)
+        } else {
+            setIsBookAd(false)
+        }
+
+        if (pathname === "/support") {
+            setIsSupport(true)
+        } else {
+            setIsSupport(false)
+        }
+
+
+        if (pathname === "/privacy") {
+            setIsPrivacy(true)
+        } else {
+            setIsPrivacy(false)
+        }
+
+    }, [pathname]);
+
     return (
-        <footer className="w-full bg-navBg text-white px-20 py-8">
+        <footer className="w-full bg-navBg text-white flex flex-col gap-8 px-20 py-8">
             <nav><h1 className="text-2xl font-semibold">Ad Ventures</h1></nav>
-            <div className="flex justify-end">
-                <ul className="flex max-md:flex-col max-md:justify-items-end gap-5 justify-end">
-                    <li className="font-semibold">Home
-                        <hr className="border-2 border-red-700 mt-3" />
+            <div className="flex flex-col md:justify-end max-md:gap-4 max-md:justify-center">
+                <h1 className="font-semibold">Quick Links:</h1>
+                <ul className="flex max-md:flex-col max-md:px-9 gap-5 justify-end">
+                    <li className={`flex flex-col gap-4  ${isHome ? 'font-semibold' : 'font-light'}`}>
+                        <Link href='/'>Home</Link>
+                        {
+                            isHome && (
+                                <hr className="border-b-4 w-24 border-red-700" />
+                            )
+                        }
+
                     </li>
-                    <li>Drivers</li>
-                    <li>Book Ad</li>
-                    <li>Privacy Policy</li>
-                    <li>Support</li>
-                    <li>Contact Us</li>
+                    <li className={`flex flex-col gap-4 ${isAbout ? 'font-semibold' : 'font-light'}`}>
+                        <Link href='/about-us'>About US</Link>
+                        {
+                            isAbout && (
+                                <hr className="border-b-4 w-24 border-red-700" />
+                            )
+                        }
+                    </li>
+                    <li className={`flex flex-col gap-4 ${isDrivers ? 'font-semibold' : 'font-light'}`}>
+                        <Link href='/drivers'>Drivers</Link>
+                        {
+                            isDrivers && (
+                                <hr className="border-b-4 w-24 border-red-700" />
+                            )
+                        }
+                    </li>
+                    <li className={`flex flex-col gap-4 ${isBookAd ? 'font-semibold' : 'font-light'}`}>
+                        <Link href='/book-ad'>Book Ad</Link>
+                        {
+                            isBookAd && (
+                                <hr className="border-b-4 w-24 border-red-700" />
+                            )
+                        }
+                    </li>
+                    <li className={`flex flex-col gap-4 ${isPricing ? 'font-semibold' : 'font-light'}`}>
+                        <Link href='/pricing'>Pricing</Link>
+                        {
+                            isPricing && (
+                                <hr className="border-b-4 w-24 border-red-700" />
+                            )
+                        }
+                    </li>
+                    <li className={`flex flex-col gap-4 ${isContact ? 'font-semibold' : 'font-light'}`}>
+                        <Link href='/contact-us'>Contact US</Link>
+                        {
+                            isContact && (
+                                <hr className="border-b-4 w-24 border-red-700" />
+                            )
+                        }
+                    </li>
+                    <li className={`flex flex-col gap-4 ${isPrivacy ? 'font-semibold' : 'font-light'}`}>
+                        <Link href='/privacy-policy'>Privacy Policy</Link>
+                        {
+                            isPrivacy && (
+                                <hr className="border-b-4 w-24 border-red-700" />
+                            )
+                        }
+                    </li>
+                    <li className={`flex flex-col gap-4 ${isSupport ? 'font-semibold' : 'font-light'}`}>
+                        <Link href='/support'>Support</Link>
+                        {
+                            isSupport && (
+                                <hr className="border-b-4 w-24 border-red-700" />
+                            )
+                        }
+                    </li>
+
                 </ul>
             </div>
             <div className="flex flex-col gap-6"><h1 className="font-semibold">Contact info:</h1>
                 <div className="px-8">
-                    <ul>
-                        <li><span>email:</span> Adventures@gmail.com</li>
-                        <li><span>phone:</span> +254 23 2345 646</li>
-                        <li><span>location:</span> NYC ft street</li>
+                    <ul className="flex flex-col gap-5">
+                        <li><span className="font-semibold">email:</span> Adventures@gmail.com</li>
+                        <li><span className="font-semibold">phone:</span> +254 23 2345 646</li>
+                        <li><span className="font-semibold">location:</span> NYC ft street</li>
                     </ul>
                 </div></div>
             <div>
