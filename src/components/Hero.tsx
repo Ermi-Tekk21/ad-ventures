@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/card"
 import { Button } from "./ui/button"
 import Image from "next/image"
+import Link from "next/link"
 
 const Hero: React.FC = () => {
     return (
@@ -69,28 +70,29 @@ const Hero: React.FC = () => {
                             </DialogTrigger>
                             <DialogContent>
                                 <DialogHeader>
-                                    <DialogTitle className='mb-5'>Describe Your Role.</DialogTitle>
-                                    <DialogDescription className='flex gap-8 justify-around'>
-                                        <div><Card>
-                                            <CardHeader>
+                                    <DialogDescription>
+                                        {/* driver or Ad cards */}
+                                        <div className="flex flex-col items-center p-4 m-auto gap-10 text-center">
+                                            <div className="flex flex-col gap-5">
+                                                <h2 className="text-4xl font-semibold text-slate-900">Wellcome to AdVentures</h2>
+                                                <p className="text-lg font-serif text-slate-900">
+                                                    Whether you're a driver looking to earn passive income or a business looking for targeted ads, Ad Ventures has the solution for you!
+                                                </p>
+                                            </div>
+                                            <div className="flex justify-between gap-10">
 
-                                                <CardDescription>do u want to advertise? click below</CardDescription>
-                                            </CardHeader>
-                                            <CardContent>
-                                                <Button>Book Ad</Button>
-                                            </CardContent>
-                                        </Card>
-                                        </div>
-                                        <div><Card>
-                                            <CardHeader>
+                                                <div className="flex flex-col gap-3">
+                                                    <DialogTrigger><Button>For Drivers</Button></DialogTrigger>
+                                                    <Link href='/drivers' className="text-blue-600"><DialogTrigger>Learn more</DialogTrigger></Link>
+                                                </div>
+                                                <div className="flex flex-col gap-3">
+                                                    <DialogTrigger><Button>For Advertising</Button></DialogTrigger>
+                                                    <Link href='/book-ad' className="text-blue-600"><DialogTrigger>Learn more</DialogTrigger></Link>
+                                                </div>
 
-                                                <CardDescription>join us and make more money</CardDescription>
-                                            </CardHeader>
-                                            <CardContent>
-                                                <Button>Driver</Button>
-                                            </CardContent>
 
-                                        </Card>
+                                            </div>
+                                            <hr className="border-[0.5px] w-1/2 border-slate-300" />
                                         </div>
                                     </DialogDescription>
                                 </DialogHeader>
@@ -102,12 +104,12 @@ const Hero: React.FC = () => {
 
             {/* Trusted by section */}
             <div className="p-5">
-                <div className="trustedBy w-full bg-navBg rounded-lg p-">
+                <div className="trustedBy w-full bg-navBg rounded-lg">
                     <p className="text-center text-3xl font-bold p-5 text-white">Trusted by</p>
-                    <div className="flex max-md:flex-col max-md:items-center max-md:justify-center gap-5 p-6 justify-between">
-                        <Card>
-                            <CardContent>
-                                <Image className="" src={`https://images.ctfassets.net/4cd45et68cgf/4nBnsuPq03diC5eHXnQYx/d48a4664cdc48b6065b0be2d0c7bc388/Netflix-Logo.jpg`} alt="netflix" width={40} height={40}></Image>
+                    <div className="flex max-md:flex-col max-md:items-center justify-center max-md:justify-center gap-5 p-6 ">
+                        <Card >
+                            <CardContent className="p-2">
+                                <Image src={`https://images.ctfassets.net/4cd45et68cgf/4nBnsuPq03diC5eHXnQYx/d48a4664cdc48b6065b0be2d0c7bc388/Netflix-Logo.jpg`} alt="netflix" width={200} height={150} className="rounded-md"></Image>
                             </CardContent>
                         </Card>
 
@@ -115,6 +117,39 @@ const Hero: React.FC = () => {
                 </div>
             </div>
 
+            {/* driver or Ad cards */}
+            <div className="bg-slate-100 -mx-8 py-10">
+
+                <div className="flex flex-col items-center w-1/2 m-auto text-balance gap-10 text-center">
+                    <div className="flex flex-col gap-5">
+                        <h2 className="text-4xl font-semibold">Wellcome to AdVentures</h2>
+                        <p className="text-lg font-serif">
+                            Whether you're a driver looking to earn passive income or a business looking for targeted ads, Ad Ventures has the solution for you!
+                        </p>
+                    </div>
+                    <div className="flex justify-between gap-10">
+
+                        <div className="flex flex-col gap-3">
+                            <Button>For Drivers</Button>
+                            <Link href='/drivers' className="text-blue-600">Learn more</Link>
+                        </div>
+                        <div className="flex flex-col gap-3">
+                            <><Button>For Advertising</Button></>
+                            <Link href='/book-ad' className="text-blue-600">Learn more</Link>
+                        </div>
+
+
+                    </div>
+                    <hr className="border-[0.5px] w-1/2 border-slate-300" />
+                </div>
+
+            </div>
+
+
+            <div>
+                <div></div>
+                <div></div>
+            </div>
 
             {/* testimonial */}
             <div className="p-5">
@@ -122,56 +157,49 @@ const Hero: React.FC = () => {
                     <p className="text-center text-3xl font-bold p-5 text-white">Testimonial</p>
                     <div className="flex max-md:flex-col max-md:items-center max-md:justify-center gap-5 p-6 justify-between">
 
-                        <Card>
-                            <CardHeader>
-
-
-                            </CardHeader>
-                            <CardContent>
-                                <div className="font-[sans-serif] max-w-[410px] h-auto p-6 rounded-lg mx-auto shadow-[0_6px_18px_-6px_rgba(193,195,248)] bg-white relative mt-12">
-                                    <Image width={16} height={14} src="https://readymadeui.com/profile_2.webp" alt="badge"></Image>
-                                    <div className="mt-6 text-center">
-                                        <div>
-                                            <h4 className="text-sm font-extrabold text-gray-800">Mark Adair</h4>
-                                            <p className="text-xs text-gray-500 mt-0.5">Web Designer | Software hub PVT. LTD.</p>
-                                        </div>
-
-                                        <div className="mt-4">
-                                            <h2 className="text-lg font-extrabold text-gray-800 mb-2">Amazing Design Inspiration</h2>
-                                            <p className="text-sm text-gray-800 leading-relaxed">The service was amazing. I never had to wait that long for my food. The staff was friendly and attentive, and the delivery was impressively prompt.</p>
-                                        </div>
-
-                                        <div className="flex justify-center space-x-1 mt-4">
-                                            <svg className="w-5 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                                            </svg>
-                                            <svg className="w-5 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                                            </svg>
-                                            <svg className="w-5 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                                            </svg>
-                                            <svg className="w-5 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                                            </svg>
-                                            <svg className="w-5 fill-[#CED5D8]" viewBox="0 0 14 13" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                                            </svg>
-                                        </div>
-                                    </div>
+                        {/* card */}
+                        <div className="font-[sans-serif] max-w-[410px] h-auto p-6 rounded-lg mx-auto shadow-[0_6px_18px_-6px_rgba(193,195,248)] bg-white relative mt-12 flex flex-col items-center">
+                            <Image width={100} height={100} src="https://readymadeui.com/profile_2.webp" className="rounded-full" alt="badge"></Image>
+                            <div className="mt-6 text-center">
+                                <div>
+                                    <h4 className="text-sm font-extrabold text-gray-800">Mark Adair</h4>
+                                    <p className="text-xs text-gray-500 mt-0.5">Web Designer | Software hub PVT. LTD.</p>
                                 </div>
-                            </CardContent>
-                        </Card>
+
+                                <div className="mt-4">
+                                    <h2 className="text-lg font-extrabold text-gray-800 mb-2">Amazing Design Inspiration</h2>
+                                    <p className="text-sm text-gray-800 leading-relaxed">The service was amazing. I never had to wait that long for my food. The staff was friendly and attentive, and the delivery was impressively prompt.</p>
+                                </div>
+
+                                <div className="flex justify-center space-x-1 mt-4">
+                                    <svg className="w-5 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                                    </svg>
+                                    <svg className="w-5 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                                    </svg>
+                                    <svg className="w-5 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                                    </svg>
+                                    <svg className="w-5 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                                    </svg>
+                                    <svg className="w-5 fill-[#CED5D8]" viewBox="0 0 14 13" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

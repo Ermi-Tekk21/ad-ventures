@@ -293,28 +293,29 @@ const NavBar: React.FC = () => {
                                 </DialogTrigger>
                                 <DialogContent>
                                     <DialogHeader>
-                                        <DialogTitle className='mb-5'>Describe Your Role.</DialogTitle>
-                                        <DialogDescription className='flex gap-8 justify-around'>
-                                            <div><Card>
-                                                <CardHeader>
+                                        <DialogDescription>
+                                            {/* driver or Ad cards */}
+                                            <div className="flex flex-col items-center p-4 m-auto gap-10 text-center">
+                                                <div className="flex flex-col gap-5">
+                                                    <h2 className="text-4xl font-semibold text-slate-900">Wellcome to AdVentures</h2>
+                                                    <p className="text-lg font-serif text-slate-900">
+                                                        Whether you're a driver looking to earn passive income or a business looking for targeted ads, Ad Ventures has the solution for you!
+                                                    </p>
+                                                </div>
+                                                <div className="flex justify-between gap-10">
 
-                                                    <CardDescription>do u want to advertise? click below</CardDescription>
-                                                </CardHeader>
-                                                <CardContent>
-                                                    <Button>Book Ad</Button>
-                                                </CardContent>
-                                            </Card>
-                                            </div>
-                                            <div><Card>
-                                                <CardHeader>
+                                                    <div className="flex flex-col gap-3">
+                                                        <DialogTrigger><Button><Link href={`/auth/drivers`}>For Drivers</Link></Button></DialogTrigger>
+                                                        <Link href='/drivers' className="text-blue-600"><DialogTrigger>Learn more</DialogTrigger></Link>
+                                                    </div>
+                                                    <div className="flex flex-col gap-3">
+                                                        <DialogTrigger><Button><Link href={`/auth/book-ad`}>For Advertising</Link></Button></DialogTrigger>
+                                                        <Link href='/book-ad' className="text-blue-600"><DialogTrigger>Learn more</DialogTrigger></Link>
+                                                    </div>
 
-                                                    <CardDescription>join us and make more money</CardDescription>
-                                                </CardHeader>
-                                                <CardContent>
-                                                    <Button>Driver</Button>
-                                                </CardContent>
 
-                                            </Card>
+                                                </div>
+                                                <hr className="border-[0.5px] w-1/2 border-slate-300" />
                                             </div>
                                         </DialogDescription>
                                     </DialogHeader>
