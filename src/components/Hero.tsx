@@ -1,4 +1,3 @@
-
 import {
     Carousel,
     CarouselContent,
@@ -25,16 +24,19 @@ import {
 import { Button } from "./ui/button"
 import Image from "next/image"
 import Link from "next/link"
+import AboutUsImage from "@/public/asset/bookAd.jpg"
 
 const Hero: React.FC = () => {
     return (
-        <main className="md:px-8 flex flex-col max-md:px-2 gap-10">
-            <div className="bg-slate-300 flex max-md:py-10 max-md:px-5 max-md:flex-col gap-10 md:p-10  items-center rounded-lg shadow-md">
+        <main className="flex flex-col max-md:px-2 gap-10 px-12">
+            {/* hero section */}
+
+            <div className="bg-slate-300 flex max-md:py-10 max-md:px-5 max-md:flex-col gap-10 md:p-10 items-center rounded-lg shadow-md ">
                 <div className="px-10 w-full h-full">
                     <Carousel>
                         <CarouselContent>
                             <CarouselItem>
-                                <Image width={800} height={800} src="https://www.bibiled.com/wp-content/uploads/2024/06/Taxi-LED-displays-help-progress-smart-cities-www.bibiled.com-1.jpg" alt="image" ></Image>
+                                <Image className="relative" width={800} height={800} src="https://www.bibiled.com/wp-content/uploads/2024/06/Taxi-LED-displays-help-progress-smart-cities-www.bibiled.com-1.jpg" alt="image" ></Image>
                             </CarouselItem>
                             <CarouselItem>
                                 <Image width={800} height={800} src="https://www.ddw.net/uploads/image/65ea8d8d7c5fe.png" alt="image" ></Image>
@@ -43,11 +45,15 @@ const Hero: React.FC = () => {
                                 <Image width={800} height={800} src="https://www.billups.com/hs-fs/hubfs/How%20Taxi%20and%20Rideshare%20Advertising%20Work%204%20(1).jpg?width=853&height=571&name=How%20Taxi%20and%20Rideshare%20Advertising%20Work%204%20(1).jpg" alt="image" ></Image>
                             </CarouselItem>
                         </CarouselContent>
-                        <CarouselPrevious />
-                        <CarouselNext />
+                        <div className="absolute  pt-8">
+                            <CarouselPrevious />
+                            <CarouselNext />
+                        </div>
+
                     </Carousel>
 
                 </div>
+
 
                 <div className="flex flex-col gap-4 justify-items-end">
                     <div className="flex gap-3">
@@ -118,8 +124,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* driver or Ad cards */}
-            <div className="bg-slate-100 -mx-8 py-10">
-
+            <div className="bg-slate-100 py-10 rounded-md shadow-md">
                 <div className="flex flex-col items-center w-1/2 m-auto text-balance gap-10 text-center">
                     <div className="flex flex-col gap-5">
                         <h2 className="text-4xl font-semibold">Wellcome to AdVentures</h2>
@@ -137,19 +142,47 @@ const Hero: React.FC = () => {
                             <><Button>For Advertising</Button></>
                             <Link href='/book-ad' className="text-blue-600">Learn more</Link>
                         </div>
-
-
                     </div>
                     <hr className="border-[0.5px] w-1/2 border-slate-300" />
                 </div>
-
             </div>
 
 
-            <div>
-                <div></div>
-                <div></div>
-            </div>
+            {/* About us */}
+            <div className="flex flex-col gap-5 bg-gray-100 py-10 rounded-md shadow-md p-10">
+                <div className="flex flex-col md:flex-row justify-center items-center">
+                    {/* Left Side: About Us Information */}
+
+                    <div className="md:w-1/2 p-4 flex flex-col gap-10">
+                        <div className="flex gap-5">
+                            <hr className="border-4 border-red-900 h-10 " />
+                            <h1 className="text-4xl font-bold mb-4 text-gray-800">About Us</h1>
+                        </div>
+
+                        <div>
+                            <p className="text-lg mb-4 text-gray-600">
+                                At Ad Ventures, we are dedicated to transforming the advertising landscape for drivers and businesses. Our platform empowers drivers to increase their earnings effortlessly while offering advertisers unmatched access to a diverse audience.
+                            </p>
+                            <p className="text-lg mb-4 text-gray-600">
+                                We believe in creating win-win opportunities, fostering innovation, and building lasting partnerships. Join us on our journey to reshape the future of advertising and unlock the full potential of your driving experience!
+                            </p>
+                        </div>
+
+                    </div>
+
+                    {/* Right Side: Image */}
+                    <div className="md:w-1/2 flex justify-center">
+                        <Image
+                            src={AboutUsImage} // Replace with your actual image path
+                            alt="About Us"
+                            className="rounded-lg shadow-lg"
+                            width={500} // Adjust width as needed
+                            height={200} // Adjust height as needed
+                        />
+                    </div>
+                </div></div>
+
+
 
             {/* testimonial */}
             <div className="p-5">
