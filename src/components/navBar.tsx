@@ -305,15 +305,13 @@ const NavBar: React.FC = () => {
                                                 <div className="flex justify-between gap-10">
 
                                                     <div className="flex flex-col gap-3">
-                                                        <DialogTrigger><Button><Link href={`/auth/drivers`}>For Drivers</Link></Button></DialogTrigger>
+                                                        <DialogTrigger><Button><Link href={`/auth/drivers/signup`}>For Drivers</Link></Button></DialogTrigger>
                                                         <Link href='/drivers' className="text-blue-600"><DialogTrigger>Learn more</DialogTrigger></Link>
                                                     </div>
                                                     <div className="flex flex-col gap-3">
-                                                        <DialogTrigger><Button><Link href={`/auth/book-ad`}>For Advertising</Link></Button></DialogTrigger>
+                                                        <DialogTrigger><Button><Link href={`/auth/book-ad/signup`}>For Advertising</Link></Button></DialogTrigger>
                                                         <Link href='/book-ad' className="text-blue-600"><DialogTrigger>Learn more</DialogTrigger></Link>
                                                     </div>
-
-
                                                 </div>
                                                 <hr className="border-[0.5px] w-1/2 border-slate-300" />
                                             </div>
