@@ -24,7 +24,7 @@ const BookAdSection: React.FC = () => {
                     <div className="md:w-1/2 p-4 flex flex-col gap-6">
                         <div className="flex gap-5">
                             <hr className="border-4 border-red-900 h-10 " />
-                            <h1 className="text-4xl font-bold mb-4 text-gray-800">Location-Based Advertising</h1>
+                            <h1 className="text-4xl font-bold mb-4 text-gray-800">Location-Based Advertising.</h1>
                         </div>
                         <div className="flex flex-col">
                             <p className="text-lg mb-4 text-gray-600">
