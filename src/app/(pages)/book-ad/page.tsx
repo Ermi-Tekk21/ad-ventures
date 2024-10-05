@@ -1,12 +1,16 @@
 import React from "react";
 import Image from "next/image";
-import BookAdImage from "@/public/asset/bookAd.jpg"; // Replace with your actual image path
+import BookAdImage1 from "@/public/asset/ad-4.jpg";
+import BookAdImage2 from "@/public/asset/ad-5.jpg";
+import BookAdImage3 from "@/public/asset/ad-6.jpg";
+import BookAdImage4 from "@/public/asset/ad-7.jpg";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const BookAdSection: React.FC = () => {
     return (
-        <main className="px-24 flex flex-col gap-4 py-16">
-            <div className="flex flex-col items-center gap-4 pt-20">
+        <main className="md:px-24 flex flex-col gap-4 py-16">
+            <div className="flex max-md:px-10 flex-col items-center gap-4 pt-20">
                 <h1 className="text-4xl font-semibold">for brands and agencies</h1>
                 <p className="text-lg font-light">
                     Maximize Your Brand Exposure with Our Innovative Advertising Solutions
@@ -34,7 +38,7 @@ const BookAdSection: React.FC = () => {
 
                                 Whether you want to advertise in busy downtown areas or specific neighbourhoods, we provide the flexibility to pinpoint your audience and deliver impactful messages that get results.
                             </p>
-                <Button className="bg-red-600 p-4 w-1/4">See pricing</Button>
+                            <Button className="w-1/4 bg-red-700 max-md:text-sm font-extrabold md:text-lg"><Link href={`/pricing`}>See pricing</Link></Button>
 
                         </div>
 
@@ -43,7 +47,7 @@ const BookAdSection: React.FC = () => {
                     {/* Right Side: Image */}
                     <div className="md:w-1/2 flex justify-center">
                         <Image
-                            src={BookAdImage} // Replace with your actual image path
+                            src={BookAdImage1} // Replace with your actual image path
                             alt="About Us"
                             className="rounded-lg shadow-lg"
                             width={500} // Adjust width as needed
@@ -58,7 +62,7 @@ const BookAdSection: React.FC = () => {
                 {/* Right Side: Image */}
                 <div className="md:w-1/2 flex justify-center">
                     <Image
-                        src={BookAdImage} // Replace with your actual image path
+                        src={BookAdImage2} // Replace with your actual image path
                         alt="About Us"
                         className="rounded-lg shadow-lg"
                         width={500} // Adjust width as needed
@@ -103,7 +107,7 @@ const BookAdSection: React.FC = () => {
                 {/* Right Side: Image */}
                 <div className="md:w-1/2 flex justify-center">
                     <Image
-                        src={BookAdImage} // Replace with your actual image path
+                        src={BookAdImage3} // Replace with your actual image path
                         alt="About Us"
                         className="rounded-lg shadow-lg"
                         width={500} // Adjust width as needed
@@ -116,7 +120,7 @@ const BookAdSection: React.FC = () => {
                 {/* Right Side: Image */}
                 <div className="md:w-1/2 flex justify-center">
                     <Image
-                        src={BookAdImage} // Replace with your actual image path
+                        src={BookAdImage4} // Replace with your actual image path
                         alt="About Us"
                         className="rounded-lg shadow-lg"
                         width={500} // Adjust width as needed
@@ -124,7 +128,7 @@ const BookAdSection: React.FC = () => {
                     />
                 </div>
                 {/* Left Side: About Us Information */}
-                <div className="md:w-1/2 p-4 flex flex-col gap-6">
+                <div className="md:w-1/2 md:p-4 flex flex-col gap-6">
                     <div className="flex gap-5">
                         <hr className="border-4 border-red-900 h-10 " />
                         <h1 className="text-4xl font-bold mb-4 text-gray-800">Reach Your Audience with Precision</h1>
@@ -140,10 +144,11 @@ const BookAdSection: React.FC = () => {
 
                 </div>
             </div>
-            <div className="flex flex-col gap-7 items-center text-center m-auto p-16">
+            <div className="flex flex-col gap-7 items-center text-center m-auto max-md:p-5 md:p-16">
                 <p className="text-2xl  font-serif">Don’t settle for traditional ads that miss the mark. With Ad Ventures, you can reach your audience where they are, when it matters most. Our cutting-edge, location-based advertising ensures your message gets in front of the right people – whether it's on billboards, taxi-tops, or digital platforms. Boost your brand's visibility and engage customers like never before.</p>
                 <h1 className="text-3xl font-semibold">Ready to boost your market<span className="text-red-800">diver network</span></h1>
-                <Button className="bg-red-600 p-6 text-3xl font-bold text-white">Book Ad</Button>
+                <Button className="w-1/4 bg-red-700 font-extrabold text-xl"><Link href={`/auth/book-ad/signup`} className="py-3">Book Ad</Link></Button>
+
             </div>
         </main>
     );

@@ -50,7 +50,6 @@ const AuthForAd: React.FC = () => {
             {/* Left Side: Image with Text */}
             <div className="hidden md:flex w-1/2 relative bg-slate-800">
                 <Link href='/' className="md:text-3xl text-white font-heading font-bold z-50 md:p-8">Ad Ventures</Link>
-
                 <Image
                     src={BookAdImg}
                     alt="Advertising Background"
@@ -64,18 +63,16 @@ const AuthForAd: React.FC = () => {
                     <h1 className="text-4xl font-bold text-white text-center">
                         Welcome to <span className="font-extrabold text-red-700">Ad Ventures</span> <br /> Log in to Manage Your Ads
                     </h1>
-                    <Button className="bg-red-800"><Link href={`/book-ad`}>Learn more</Link></Button>
+                    <Button className="bg-red-800"><Link href={`/drivers`}>Learn more</Link></Button>
                 </div>
             </div>
 
             {/* Right Side: Form */}
-            <div className=" flex flex-col gap-8">
-            <Link href='/' className="max-sm:text:lg text-slate-900 absolute top-0 font-heading sm:hidden font-bold z-50 max-sm:p-8">Ad Ventures</Link>
-                 <div className="w-full md:w-1/2 flex flex-col justify-center p-8 bg-slate-50">
+            <div className="w-1/2 h-3/4 max-md:pt-20 md:pt-10 flex flex-col gap-8">
 
-                
+                <Link href='/' className="max-sm:text:lg text-slate-900 absolute top-0 font-heading sm:hidden font-bold z-50 max-sm:p-8">Ad Ventures</Link>
 
-                <h2 className="text-3xl font-bold text-gray-800 text-center mb-6 max-md:pt-14">Signup to Book Your Ad</h2>
+                <p className="text-3xl font-bold text-gray-800 text-center mb-6">Signup | <span className="text-red-800">Book Ad</span></p>
 
 
                 <Form {...form}>
@@ -163,9 +160,8 @@ const AuthForAd: React.FC = () => {
                     Already have an account? <a href="/auth/book-ad/login" className="text-blue-600">Log In</a>
                 </p>
             </div>
-            </div>
-           
         </div>
+
     )
 }
 

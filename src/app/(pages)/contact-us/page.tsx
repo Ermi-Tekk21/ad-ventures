@@ -1,47 +1,110 @@
-import AboutUsImage from '@/public/asset/bookAd.jpg'
-import Image from 'next/image';
-const ContactUsSection: React.FC = () => {
-    return (
-        <div className="flex flex-col md:flex-row justify-center items-center p-8 bg-gray-200 pt-32">
-            <div className="md:w-1/2 p-4">
-                <h1 className="text-4xl font-bold mb-4 text-gray-800">Contact Us</h1>
-                <p className="text-lg mb-4 text-gray-600">
-                    Have questions or need assistance? We're here to help! Reach out to us using the form below or connect with us through our social media channels.
-                </p>
-                <form className="space-y-4">
-                    <input
-                        type="text"
-                        placeholder="Your Name"
-                        className="w-full p-2 border border-gray-300 rounded"
-                    />
-                    <input
-                        type="email"
-                        placeholder="Your Email"
-                        className="w-full p-2 border border-gray-300 rounded"
-                    />
-                    <textarea
-                        placeholder="Your Message"
-                        className="w-full p-2 border border-gray-300 rounded"
-                        rows={4}
-                    ></textarea>
-                    <button className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500 transition">
-                        Send Message
-                    </button>
-                </form>
-            </div>
+"use client"
 
-            {/* Right Side: Contact Image */}
-            <div className="md:w-1/2 flex justify-center">
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+
+import ContactUsImage from "@/public/asset/ad-3.jpg"
+import { Button } from "@/components/ui/button"
+import {
+    Form,
+    FormControl,
+    FormDescription,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import Image from "next/image"
+
+const formSchema = z.object({
+    name: z.string().min(2, {
+        message: "Name must be at least 2 characters.",
+    }),
+    email: z.string().email({ message: "Invalid email address." }),
+    message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+})
+
+const ContactUs: React.FC = () => {
+    const form = useForm({
+        resolver: zodResolver(formSchema),
+        defaultValues: {
+            name: "",
+            email: "",
+            message: "",
+        },
+    })
+
+    const onSubmit = (data: any) => {
+        console.log("Submitted Data:", data)
+    }
+
+    return (
+        <div className="flex flex-col md:flex-row justify-around items-center bg-gray-100 md:p-8 pt-32 md:px-32 md:pt-32">
+            {/* Left Image Section */}
+            <div className="flex-1 max-md:hidden">
                 <Image
-                    src={AboutUsImage} // Replace with your actual image path
-                    alt="Contact Us"
-                    className="rounded-lg shadow-lg"
+                    src={ContactUsImage} // Replace with your actual image path
+                    alt="About Us"
+                    className="rounded-lg shadow-lg w-[500px] has-[300px]:"
                     width={500} // Adjust width as needed
                     height={300} // Adjust height as needed
                 />
             </div>
-        </div>
-    );
-};
 
-export default ContactUsSection;
+            {/* Right Form Section */}
+            <div className="flex-1 bg-white flex-col max-md:py-10 md:py-20 px-5">
+                <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                        <FormField
+                            control={form.control}
+                            name="name"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Name</FormLabel>
+                                    <FormControl>
+                                        <Input placeholder="Your Name" {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+
+                        <FormField
+                            control={form.control}
+                            name="email"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Email</FormLabel>
+                                    <FormControl>
+                                        <Input placeholder="your-email@example.com" {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+
+                        <FormField
+                            control={form.control}
+                            name="message"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Message</FormLabel>
+                                    <FormControl>
+                                        <Textarea placeholder="Your message..." {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                        <Button type="submit">Send Message</Button>
+                    </form>
+                </Form>
+            </div>
+        </div>
+    )
+}
+
+export default ContactUs

@@ -222,9 +222,9 @@ const Hero: React.FC = () => {
             <div className="flex flex-col gap-6">
                 <div className="text-center max-w-3xl mx-auto">
                     <h2 className="text-3xl font-extrabold text-gray-800">Testimonials</h2>
-                    <p className="text-sm text-gray-800 mt-4 leading-relaxed">Hear from our satisfied clients and drivers who have experienced the power of Ad Ventures. From innovative advertising solutions to seamless driver partnerships, we’re committed to delivering value and success to everyone involved. Discover how our platform has transformed businesses and empowered drivers to earn more, effortlessly.</p>
+                    <p className="text-gray-800 mt-4 leading-relaxed">Hear from our satisfied clients and drivers who have experienced the power of Ad Ventures. From innovative advertising solutions to seamless driver partnerships, we’re committed to delivering value and success to everyone involved. Discover how our platform has transformed businesses and empowered drivers to earn more, effortlessly.</p>
                 </div>
-                <div className="flex justify-center"><Carousel className="w-4/5 max-md:w-3/4">  {/* Full width and height */}
+                <div className="flex justify-center"><Carousel className="md:w-4/5 max-md:w-3/4">  {/* Full width and height */}
                     <CarouselContent className="flex">  {/* Use flex to align the items horizontally */}
                         {Testimonials.map((person) => (
                             <CarouselItem key={person.id} className="flex-none md:w-1/3 max-md:w-full"> {/* Ensure each item takes 1/3 of the screen */}
