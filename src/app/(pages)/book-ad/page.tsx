@@ -34,7 +34,7 @@ const BookAdSection: React.FC = () => {
 
                                 Whether you want to advertise in busy downtown areas or specific neighbourhoods, we provide the flexibility to pinpoint your audience and deliver impactful messages that get results.
                             </p>
-                <Button className="bg-red-600 p-4 w-1/4">See pricing</Button>
+                            <Button className="bg-red-600 p-4 w-1/4">See pricing</Button>
 
                         </div>
 

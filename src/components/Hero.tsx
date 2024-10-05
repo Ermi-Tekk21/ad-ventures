@@ -11,145 +11,181 @@ import {
     DialogContent,
     DialogDescription,
     DialogHeader,
-    DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
 
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-} from "@/components/ui/card"
 import { Button } from "./ui/button"
 import Image from "next/image"
 import Link from "next/link"
-import AboutUsImage from "@/public/asset/bookAd.jpg"
+import AboutUsImage from "@/public/asset/ad-4.jpg"
+import { Testimonials, Trusted } from "@/utils/data"
+
 
 const Hero: React.FC = () => {
     return (
-        <main className="flex flex-col max-md:px-2 gap-10 px-12">
+        <main className="flex flex-col max-md:px-2 gap-10">
             {/* hero section */}
+            <div className="flex w-full h-screen relative bg-slate-800">
+                <Image
+                    src={AboutUsImage}
+                    alt="Advertising Background"
+                    layout="fill"
+                    className="opacity-50"
+                    objectFit="cover"
+                    quality={100}
+                    priority={true}
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center flex-col gap-10">
+                    <div className="flex justify-center items-center mt-10">
+                        <div className="relative flex flex-col md:flex-row p-8 md:p-16 gap-10 items-center rounded-lg shadow-md mx-4 md:mx-16">
 
-            <div className="bg-slate-300 flex max-md:py-10 max-md:px-5 max-md:flex-col gap-10 md:p-10 items-center rounded-lg shadow-md ">
-                <div className="px-10 w-full h-full">
-                    <Carousel>
-                        <CarouselContent>
-                            <CarouselItem>
-                                <Image className="relative" width={800} height={800} src="https://www.bibiled.com/wp-content/uploads/2024/06/Taxi-LED-displays-help-progress-smart-cities-www.bibiled.com-1.jpg" alt="image" ></Image>
-                            </CarouselItem>
-                            <CarouselItem>
-                                <Image width={800} height={800} src="https://www.ddw.net/uploads/image/65ea8d8d7c5fe.png" alt="image" ></Image>
-                            </CarouselItem>
-                            <CarouselItem>
-                                <Image width={800} height={800} src="https://www.billups.com/hs-fs/hubfs/How%20Taxi%20and%20Rideshare%20Advertising%20Work%204%20(1).jpg?width=853&height=571&name=How%20Taxi%20and%20Rideshare%20Advertising%20Work%204%20(1).jpg" alt="image" ></Image>
-                            </CarouselItem>
-                        </CarouselContent>
-                        <div className="absolute  pt-8">
-                            <CarouselPrevious />
-                            <CarouselNext />
+                            {/* Carousel Section */}
+                            <div className="w-full md:w-1/2 h-full max-md:mt-20">
+                                <Carousel>
+                                    <CarouselContent className="opacity-80">
+                                        <CarouselItem>
+                                            <Image
+                                                width={800}
+                                                height={800}
+                                                src="https://www.bibiled.com/wp-content/uploads/2024/06/Taxi-LED-displays-help-progress-smart-cities-www.bibiled.com-1.jpg"
+                                                alt="image"
+                                            />
+                                        </CarouselItem>
+                                        <CarouselItem>
+                                            <Image
+                                                width={800}
+                                                height={800}
+                                                src="https://www.ddw.net/uploads/image/65ea8d8d7c5fe.png"
+                                                alt="image"
+                                            />
+                                        </CarouselItem>
+                                        <CarouselItem>
+                                            <Image
+                                                width={800}
+                                                height={800}
+                                                src="https://www.billups.com/hs-fs/hubfs/How%20Taxi%20and%20Rideshare%20Advertising%20Work%204%20(1).jpg"
+                                                alt="image"
+                                            />
+                                        </CarouselItem>
+                                    </CarouselContent>
+                                    <div className="absolute bottom-7 right-14">
+                                        <CarouselPrevious />
+                                        <CarouselNext />
+                                    </div>
+                                </Carousel>
+                            </div>
+
+                            {/* Text Section */}
+                            <div className="flex flex-col gap-5 text-white md:w-1/2">
+                                <div className="flex gap-3">
+                                    <hr className="h-10 border-4 border-red-900" />
+                                    <p className="text-4xl max-md:text-2xl font-bold text-yellow-300">Ad Ventures</p>
+                                </div>
+
+                                <div className="text">
+                                    <span className="text-xl max-md:text-lg font-semibold">Revolutionize Your Advertising with Location-Based Targeting</span>
+                                    <p className="font-light max-md:hidden">
+                                        Welcome to Ad Ventures, where innovation meets precision in digital advertising. Our platform brings your brand closer to the right audience at the right time, leveraging high-resolution digital screens on taxis and billboards.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <span className="text-xl max-md:text-lg font-semibold">Drive Your Message to the Right Audience</span>
+                                    <p className="font-light max-md:hidden">
+                                        With Ad Ventures, you can take your advertising to the streets and beyond—connecting with your target market as they live, work, and play.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <Dialog>
+                                        <DialogTrigger>
+                                            <Button className="bg-red-800 p-4 text-lg font-semibold">Get Started</Button>
+                                        </DialogTrigger>
+                                        <DialogContent>
+                                            <DialogHeader>
+                                                <DialogDescription>
+                                                    <div className="flex flex-col items-center p-4 m-auto gap-10 text-center">
+                                                        <div className="flex flex-col gap-5">
+                                                            <h2 className="text-4xl font-semibold text-slate-900">Welcome to AdVentures</h2>
+                                                            <p className="text-lg font-serif text-slate-900">
+                                                                Whether you're a driver looking to earn passive income or a business looking for targeted ads, Ad Ventures has the solution for you!
+                                                            </p>
+                                                        </div>
+
+                                                        <div className="flex justify-between gap-10">
+                                                            <div className="flex flex-col gap-3">
+                                                                <DialogTrigger><Button><Link href={`/auth/drivers/signup`}>For Drivers</Link></Button></DialogTrigger>
+                                                                <Link href='/drivers' className="text-blue-600"><DialogTrigger>Learn more</DialogTrigger></Link>
+                                                            </div>
+                                                            <div className="flex flex-col gap-3">
+                                                                <DialogTrigger><Button><Link href={`/auth/book-ad/signup`}>For Advertising</Link></Button></DialogTrigger>
+                                                                <Link href='/book-ad' className="text-blue-600"><DialogTrigger>Learn more</DialogTrigger></Link>
+                                                            </div>
+                                                        </div>
+                                                        <hr className="border-[0.5px] w-1/2 border-slate-300" />
+                                                    </div>
+                                                </DialogDescription>
+                                            </DialogHeader>
+                                        </DialogContent>
+                                    </Dialog>
+                                </div>
+                            </div>
                         </div>
-
-                    </Carousel>
-
-                </div>
-
-
-                <div className="flex flex-col gap-4 justify-items-end">
-                    <div className="flex gap-3">
-                        <hr className="h-10 border-4 border-red-900" />
-                        <p className="text-3xl font-semibold text-red-950">Ad Ventures</p>
-                    </div>
-
-                    <div className="tex">
-                        <span className="text-xl">Revolutionize Your Advertising with Location-Based Targeting</span>
-                        <p className="font-light">Welcome to Ad Ventures, where innovation meets precision in digital advertising. Our platform brings your brand closer to the right audience at the right time, leveraging high-resolution digital screens on taxis and billboards.</p>
-                    </div>
-                    <div className="">
-                        <span className="text-xl">Drive Your Message to the Right Audience</span>
-                        <p className="font-light">With Ad Ventures, you can take your advertising to the streets and beyond—connecting with your target market as they live, work, and play.</p>
-                    </div>
-                    <div>
-                        <Dialog>
-                            <DialogTrigger>
-                                <Button className="bg-red-800">Get Started</Button>
-                            </DialogTrigger>
-                            <DialogContent>
-                                <DialogHeader>
-                                    <DialogDescription>
-                                        {/* driver or Ad cards */}
-                                        <div className="flex flex-col items-center p-4 m-auto gap-10 text-center">
-                                            <div className="flex flex-col gap-5">
-                                                <h2 className="text-4xl font-semibold text-slate-900">Wellcome to AdVentures</h2>
-                                                <p className="text-lg font-serif text-slate-900">
-                                                    Whether you're a driver looking to earn passive income or a business looking for targeted ads, Ad Ventures has the solution for you!
-                                                </p>
-                                            </div>
-                                            <div className="flex justify-between gap-10">
-
-                                                <div className="flex flex-col gap-3">
-                                                    <DialogTrigger><Button>For Drivers</Button></DialogTrigger>
-                                                    <Link href='/drivers' className="text-blue-600"><DialogTrigger>Learn more</DialogTrigger></Link>
-                                                </div>
-                                                <div className="flex flex-col gap-3">
-                                                    <DialogTrigger><Button>For Advertising</Button></DialogTrigger>
-                                                    <Link href='/book-ad' className="text-blue-600"><DialogTrigger>Learn more</DialogTrigger></Link>
-                                                </div>
-
-
-                                            </div>
-                                            <hr className="border-[0.5px] w-1/2 border-slate-300" />
-                                        </div>
-                                    </DialogDescription>
-                                </DialogHeader>
-                            </DialogContent>
-                        </Dialog>
                     </div>
                 </div>
+            </div>
+
+
+
+            {/* driver or Ad cards */}
+            <div className="flex flex-col md:w-1/2 items-center md:p-4 m-auto gap-10 text-center">
+                <div className="flex flex-col gap-5">
+                    <h2 className="text-4xl font-semibold text-slate-900">Wellcome to AdVentures</h2>
+                    <p className="text-lg font-serif text-slate-900">
+                        Whether you're a driver looking to earn passive income or a business looking for targeted ads, Ad Ventures has the solution for you!
+                    </p>
+                </div>
+                <div className="flex justify-between gap-10">
+
+                    <div className="flex flex-col gap-3">
+                        <Button><Link href={`/auth/drivers/signup`}>For Drivers</Link></Button>
+                        <Link href='/drivers' className="text-blue-600">Learn more</Link>
+                    </div>
+                    <div className="flex flex-col gap-3">
+                        <Button><Link href={`/auth/book-ad/signup`}>For Advertising</Link></Button>
+                        <Link href='/book-ad' className="text-blue-600">Learn more</Link>
+                    </div>
+                </div>
+                <hr className="border-[0.5px] w-1/2 border-slate-300" />
             </div>
 
             {/* Trusted by section */}
-            <div className="p-5">
-                <div className="trustedBy w-full bg-navBg rounded-lg">
+            <div className="md:px-16 max-md:p-4">
+                <div className="trustedBy w-full bg-navBg rounded-lg opacity-90">
                     <p className="text-center text-3xl font-bold p-5 text-white">Trusted by</p>
-                    <div className="flex max-md:flex-col max-md:items-center justify-center max-md:justify-center gap-5 p-6 ">
-                        <Card >
-                            <CardContent className="p-2">
-                                <Image src={`https://images.ctfassets.net/4cd45et68cgf/4nBnsuPq03diC5eHXnQYx/d48a4664cdc48b6065b0be2d0c7bc388/Netflix-Logo.jpg`} alt="netflix" width={200} height={150} className="rounded-md"></Image>
-                            </CardContent>
-                        </Card>
+                    {/* testimonial */}
+                    <div className="flex justify-center"><Carousel className="w-4/5">  {/* Full width and height */}
+                        <CarouselContent className="flex">  {/* Use flex to align the items horizontally */}
+                            {Trusted.map((item) => (
+                                <CarouselItem key={item.id} className="flex-none w-1/ 3"> {/* Ensure each item takes 1/3 of the screen */}
+                                    <div className="h-full p-8">  {/* Padding adjusted for spacing */}
+                                        <div className="p-6">
+                                            <img src={item.image} alt="image" className="rounded-full max-md:w-36 right-0 left-0 mx-auto -top-7" />
+                                        </div>
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious />
+                        <CarouselNext />
+                    </Carousel>
 
                     </div>
                 </div>
             </div>
-
-            {/* driver or Ad cards */}
-            <div className="bg-slate-100 py-10 rounded-md shadow-md">
-                <div className="flex flex-col items-center w-1/2 m-auto text-balance gap-10 text-center">
-                    <div className="flex flex-col gap-5">
-                        <h2 className="text-4xl font-semibold">Wellcome to AdVentures</h2>
-                        <p className="text-lg font-serif">
-                            Whether you're a driver looking to earn passive income or a business looking for targeted ads, Ad Ventures has the solution for you!
-                        </p>
-                    </div>
-                    <div className="flex justify-between gap-10">
-
-                        <div className="flex flex-col gap-3">
-                            <Button>For Drivers</Button>
-                            <Link href='/drivers' className="text-blue-600">Learn more</Link>
-                        </div>
-                        <div className="flex flex-col gap-3">
-                            <><Button>For Advertising</Button></>
-                            <Link href='/book-ad' className="text-blue-600">Learn more</Link>
-                        </div>
-                    </div>
-                    <hr className="border-[0.5px] w-1/2 border-slate-300" />
-                </div>
-            </div>
-
 
             {/* About us */}
-            <div className="flex flex-col gap-5 bg-gray-100 py-10 rounded-md shadow-md p-10">
+            <div className="flex flex-col gap-5 bg-gray-100 py-10 rounded-md shadow-md md:p-10 md:mx-16 max-md:mx-6">
                 <div className="flex flex-col md:flex-row justify-center items-center">
                     {/* Left Side: About Us Information */}
 
@@ -182,58 +218,33 @@ const Hero: React.FC = () => {
                     </div>
                 </div></div>
 
-
-
             {/* testimonial */}
-            <div className="p-5">
-                <div className="trustedBy w-full bg-navBg rounded-lg p-">
-                    <p className="text-center text-3xl font-bold p-5 text-white">Testimonial</p>
-                    <div className="flex max-md:flex-col max-md:items-center max-md:justify-center gap-5 p-6 justify-between">
-
-                        {/* card */}
-                        <div className="font-[sans-serif] max-w-[410px] h-auto p-6 rounded-lg mx-auto shadow-[0_6px_18px_-6px_rgba(193,195,248)] bg-white relative mt-12 flex flex-col items-center">
-                            <Image width={100} height={100} src="https://readymadeui.com/profile_2.webp" className="rounded-full" alt="badge"></Image>
-                            <div className="mt-6 text-center">
-                                <div>
-                                    <h4 className="text-sm font-extrabold text-gray-800">Mark Adair</h4>
-                                    <p className="text-xs text-gray-500 mt-0.5">Web Designer | Software hub PVT. LTD.</p>
+            <div className="flex flex-col gap-6">
+                <div className="text-center max-w-3xl mx-auto">
+                    <h2 className="text-3xl font-extrabold text-gray-800">Testimonials</h2>
+                    <p className="text-sm text-gray-800 mt-4 leading-relaxed">Hear from our satisfied clients and drivers who have experienced the power of Ad Ventures. From innovative advertising solutions to seamless driver partnerships, we’re committed to delivering value and success to everyone involved. Discover how our platform has transformed businesses and empowered drivers to earn more, effortlessly.</p>
+                </div>
+                <div className="flex justify-center"><Carousel className="w-4/5 max-md:w-3/4">  {/* Full width and height */}
+                    <CarouselContent className="flex">  {/* Use flex to align the items horizontally */}
+                        {Testimonials.map((person) => (
+                            <CarouselItem key={person.id} className="flex-none md:w-1/3 max-md:w-full"> {/* Ensure each item takes 1/3 of the screen */}
+                                <div className="h-full p-8">  {/* Padding adjusted for spacing */}
+                                    <div className="w-full p-6 rounded-lg mx-auto shadow-[0_4px_14px_-6px_rgba(93,96,127,0.4)] bg-white relative">
+                                        <img src={person.image} className="w-14 h-14 rounded-full absolute right-0 left-0 mx-auto -top-7" />
+                                        <div className="mt-6 text-center">
+                                            <p className="text-sm text-gray-800 leading-relaxed">{person.description}</p>
+                                        </div>
+                                        <div className="mt-6 text-center">
+                                            <h4 className="text-sm whitespace-nowrap font-bold">{person.name}</h4>
+                                        </div>
+                                    </div>
                                 </div>
-
-                                <div className="mt-4">
-                                    <h2 className="text-lg font-extrabold text-gray-800 mb-2">Amazing Design Inspiration</h2>
-                                    <p className="text-sm text-gray-800 leading-relaxed">The service was amazing. I never had to wait that long for my food. The staff was friendly and attentive, and the delivery was impressively prompt.</p>
-                                </div>
-
-                                <div className="flex justify-center space-x-1 mt-4">
-                                    <svg className="w-5 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                                    </svg>
-                                    <svg className="w-5 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                                    </svg>
-                                    <svg className="w-5 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                                    </svg>
-                                    <svg className="w-5 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                                    </svg>
-                                    <svg className="w-5 fill-[#CED5D8]" viewBox="0 0 14 13" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                </Carousel>
                 </div>
             </div>
         </main>
