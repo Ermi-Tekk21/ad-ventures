@@ -6,8 +6,6 @@ export default function Home() {
     <header>
         <Hero />
         <FAQ />
-
-
     </header>
   )
 }

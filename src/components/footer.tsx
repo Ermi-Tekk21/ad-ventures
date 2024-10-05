@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
         }
 
 
-        if (pathname === "/privacy") {
+        if (pathname === "/privacy-policy") {
             setIsPrivacy(true)
         } else {
             setIsPrivacy(false)
@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
                         <Link href='/'>Home</Link>
                         {
                             isHome && (
-                                <hr className="border-b-4 w-24 border-red-700" />
+                                <hr className="border-b-4 border-red-700" />
                             )
                         }
 
@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
                         <Link href='/about-us'>About US</Link>
                         {
                             isAbout && (
-                                <hr className="border-b-4 w-24 border-red-700" />
+                                <hr className="border-b-4 border-red-700" />
                             )
                         }
                     </li>
@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
                         <Link href='/drivers'>Drivers</Link>
                         {
                             isDrivers && (
-                                <hr className="border-b-4 w-24 border-red-700" />
+                                <hr className="border-b-4 border-red-700" />
                             )
                         }
                     </li>
@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
                         <Link href='/book-ad'>Book Ad</Link>
                         {
                             isBookAd && (
-                                <hr className="border-b-4 w-24 border-red-700" />
+                                <hr className="border-b-4 border-red-700" />
                             )
                         }
                     </li>
@@ -113,7 +113,7 @@ const Footer: React.FC = () => {
                         <Link href='/pricing'>Pricing</Link>
                         {
                             isPricing && (
-                                <hr className="border-b-4 w-24 border-red-700" />
+                                <hr className="border-b-4 border-red-700" />
                             )
                         }
                     </li>
@@ -121,7 +121,7 @@ const Footer: React.FC = () => {
                         <Link href='/contact-us'>Contact US</Link>
                         {
                             isContact && (
-                                <hr className="border-b-4 w-24 border-red-700" />
+                                <hr className="border-b-4 border-red-700" />
                             )
                         }
                     </li>
@@ -129,7 +129,7 @@ const Footer: React.FC = () => {
                         <Link href='/privacy-policy'>Privacy Policy</Link>
                         {
                             isPrivacy && (
-                                <hr className="border-b-4 w-24 border-red-700" />
+                                <hr className="border-b-4 border-red-700" />
                             )
                         }
                     </li>
@@ -137,7 +137,7 @@ const Footer: React.FC = () => {
                         <Link href='/support'>Support</Link>
                         {
                             isSupport && (
-                                <hr className="border-b-4 w-24 border-red-700" />
+                                <hr className="border-b-4 border-red-700" />
                             )
                         }
                     </li>

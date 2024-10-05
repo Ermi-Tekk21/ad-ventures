@@ -59,7 +59,7 @@ const signupDr: React.FC = () => {
                     quality={100}
                     priority={true}
                 />
-                 <div className="absolute flex flex-col inset-0 bg-black bg-opacity-50 gap-5 items-center justify-center">
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center flex-col gap-10">
                     <h1 className="text-4xl font-bold text-white text-center">
                         Maximize your earnings with Ad Ventures!
                     </h1>
@@ -68,7 +68,7 @@ const signupDr: React.FC = () => {
             </div>
 
             {/* Right Side: Form */}
-            <div className="w-full md:w-1/2 flex flex-col justify-center p-8 bg-slate-50">
+            <div className="w-1/2 h-3/4 max-md:pt-20 md:pt-10 flex flex-col gap-8">
 
                 <Link href='/' className="max-sm:text:lg text-slate-900 absolute top-0 font-heading sm:hidden font-bold z-50 max-sm:p-8">Ad Ventures</Link>
 
@@ -84,7 +84,7 @@ const signupDr: React.FC = () => {
                                 <FormItem>
                                     <FormLabel>Full Name</FormLabel>
                                     <FormControl>
-                                        
+                                        <Input placeholder="John Doe" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -164,3 +164,12 @@ const signupDr: React.FC = () => {
 }
 
 export default signupDr;
+
+
+
+
+
+
+
+
+
