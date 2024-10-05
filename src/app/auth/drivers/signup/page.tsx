@@ -84,7 +84,7 @@ const signupDr: React.FC = () => {
                                 <FormItem>
                                     <FormLabel>Full Name</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="John Doe" {...field} />
+                                        
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
