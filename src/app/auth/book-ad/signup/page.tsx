@@ -69,11 +69,13 @@ const AuthForAd: React.FC = () => {
             </div>
 
             {/* Right Side: Form */}
-            <div className="w-full md:w-1/2 flex flex-col justify-center p-8 bg-slate-50">
+            <div className=" flex flex-col gap-8">
+            <Link href='/' className="max-sm:text:lg text-slate-900 absolute top-0 font-heading sm:hidden font-bold z-50 max-sm:p-8">Ad Ventures</Link>
+                 <div className="w-full md:w-1/2 flex flex-col justify-center p-8 bg-slate-50">
 
-                <Link href='/' className="max-sm:text:lg text-slate-900 absolute top-0 font-heading sm:hidden font-bold z-50 max-sm:p-8">Ad Ventures</Link>
+                
 
-                <h2 className="text-3xl font-bold text-gray-800 text-center mb-6">Signup to Book Your Ad</h2>
+                <h2 className="text-3xl font-bold text-gray-800 text-center mb-6 max-md:pt-14">Signup to Book Your Ad</h2>
 
 
                 <Form {...form}>
@@ -161,6 +163,8 @@ const AuthForAd: React.FC = () => {
                     Already have an account? <a href="/auth/book-ad/login" className="text-blue-600">Log In</a>
                 </p>
             </div>
+            </div>
+           
         </div>
     )
 }
