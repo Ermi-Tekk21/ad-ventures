@@ -114,7 +114,7 @@ const LoginForDr: React.FC = () => {
                 </Form>
 
                 <p className="text-center text-gray-600 mt-4">
-                    Don't have an account? <a href="/auth/drivers/signup" className="text-blue-600">Sign Up</a>
+                    Do not have an account? <a href="/auth/drivers/signup" className="text-blue-600">Sign Up</a>
                 </p>
             </div>
         </div>

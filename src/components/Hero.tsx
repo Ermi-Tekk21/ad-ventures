@@ -108,7 +108,7 @@ const Hero: React.FC = () => {
                                                         <div className="flex flex-col gap-5">
                                                             <h2 className="text-4xl font-semibold text-slate-900">Welcome to AdVentures</h2>
                                                             <p className="text-lg font-serif text-slate-900">
-                                                                Whether you're a driver looking to earn passive income or a business looking for targeted ads, Ad Ventures has the solution for you!
+                                                                Whether you are a driver looking to earn passive income or a business looking for targeted ads, Ad Ventures has the solution for you!
                                                             </p>
                                                         </div>
 
@@ -142,7 +142,7 @@ const Hero: React.FC = () => {
                 <div className="flex flex-col gap-5">
                     <h2 className="text-4xl font-semibold text-slate-900">Wellcome to AdVentures</h2>
                     <p className="text-lg font-serif text-slate-900">
-                        Whether you're a driver looking to earn passive income or a business looking for targeted ads, Ad Ventures has the solution for you!
+                        Whether you are a driver looking to earn passive income or a business looking for targeted ads, Ad Ventures has the solution for you!
                     </p>
                 </div>
                 <div className="flex justify-between gap-10">
@@ -170,7 +170,13 @@ const Hero: React.FC = () => {
                                 <CarouselItem key={item.id} className="flex-none w-1/ 3"> {/* Ensure each item takes 1/3 of the screen */}
                                     <div className="h-full p-8">  {/* Padding adjusted for spacing */}
                                         <div className="p-6">
-                                            <img src={item.image} alt="image" className="rounded-full max-md:w-36 right-0 left-0 mx-auto -top-7" />
+                                            <Image
+                                                width={800}
+                                                height={800}
+                                                className="rounded-full max-md:w-36 right-0 left-0 mx-auto -top-7"
+                                                src={item.image}
+                                                alt="image"
+                                            />
                                         </div>
                                     </div>
                                 </CarouselItem>
@@ -192,7 +198,7 @@ const Hero: React.FC = () => {
                     <div className="md:w-1/2 p-4 flex flex-col gap-10">
                         <div className="flex gap-5">
                             <hr className="border-4 border-red-900 h-10 " />
-                            <h1 className="text-4xl font-bold mb-4 text-gray-800">About Us</h1>
+                            <h1 className="text-4xl font-bold mb-4 text-gray-800">Who we are.</h1>
                         </div>
 
                         <div>
@@ -230,7 +236,13 @@ const Hero: React.FC = () => {
                             <CarouselItem key={person.id} className="flex-none md:w-1/3 max-md:w-full"> {/* Ensure each item takes 1/3 of the screen */}
                                 <div className="h-full p-8">  {/* Padding adjusted for spacing */}
                                     <div className="w-full p-6 rounded-lg mx-auto shadow-[0_4px_14px_-6px_rgba(93,96,127,0.4)] bg-white relative">
-                                        <img src={person.image} className="w-14 h-14 rounded-full absolute right-0 left-0 mx-auto -top-7" />
+                                        <Image
+                            src={person.image} // Replace with your actual image path
+                            alt="About Us"
+                            className="w-14 h-14 rounded-full absolute right-0 left-0 mx-auto -top-7 shadow-lg"
+                            width={500} // Adjust width as needed
+                            height={200} // Adjust height as needed
+                        />
                                         <div className="mt-6 text-center">
                                             <p className="text-sm text-gray-800 leading-relaxed">{person.description}</p>
                                         </div>

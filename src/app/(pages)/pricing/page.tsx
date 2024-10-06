@@ -1,6 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import PricingImage from "@/public/asset/bookAd.jpg"; // Replace with your actual image path
 
 const PricingSection: React.FC = () => {
     return (

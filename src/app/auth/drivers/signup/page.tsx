@@ -27,7 +27,7 @@ const formSchema = z.object({
     country: z.string().min(2, "Country is required"),
 })
 
-const signupDr: React.FC = () => {
+const SignUpForDr: React.FC = () => {
     // Initialize form using the schema
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -163,7 +163,7 @@ const signupDr: React.FC = () => {
     )
 }
 
-export default signupDr;
+export default SignUpForDr;
 
 
 
