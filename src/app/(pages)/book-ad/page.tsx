@@ -80,7 +80,7 @@ const BookAdSection: React.FC = () => {
                             Make sure your brand stands out. With large, eye-catching billboards and dynamic taxi-top screens, your message will be hard to miss.
                         </p>
                         <p className="text-lg mb-4 text-gray-600">
-                            Our advertising platforms give you high-visibility placements in areas with heavy foot traffic, ensuring that your brand captures attention and leaves a lasting impression. It's more than just reaching people – it's making a strong visual impact.
+                            Our advertising platforms give you high-visibility placements in areas with heavy foot traffic, ensuring that your brand captures attention and leaves a lasting impression. It is more than just reaching people – it is making a strong visual impact.
                         </p>
                     </div>
 
@@ -135,7 +135,7 @@ const BookAdSection: React.FC = () => {
                     </div>
                     <div className="flex flex-col">
                         <p className="text-lg mb-4 text-gray-600">
-                            No more guesswork—our platform ensures that your ads are seen by the right people. Whether you're looking to target commuters on the road or pedestrians in high-traffic areas, we help you engage customers where they spend the most time.
+                            No more guesswork—our platform ensures that your ads are seen by the right people. Whether you are looking to target commuters on the road or pedestrians in high-traffic areas, we help you engage customers where they spend the most time.
                         </p>
                         <p className="text-lg mb-4 text-gray-600">
                             This precision helps to maximize your return on investment by putting your ads directly in front of your target audience.
@@ -145,7 +145,7 @@ const BookAdSection: React.FC = () => {
                 </div>
             </div>
             <div className="flex flex-col gap-7 items-center text-center m-auto max-md:p-5 md:p-16">
-                <p className="text-2xl  font-serif">Don’t settle for traditional ads that miss the mark. With Ad Ventures, you can reach your audience where they are, when it matters most. Our cutting-edge, location-based advertising ensures your message gets in front of the right people – whether it's on billboards, taxi-tops, or digital platforms. Boost your brand's visibility and engage customers like never before.</p>
+                <p className="text-2xl  font-serif">Do not settle for traditional ads that miss the mark. With Ad Ventures, you can reach your audience where they are, when it matters most. Our cutting-edge, location-based advertising ensures your message gets in front of the right people – whether it is on billboards, taxi-tops, or digital platforms. Boost your brand visibility and engage customers like never before.</p>
                 <h1 className="text-3xl font-semibold">Ready to boost your market<span className="text-red-800">diver network</span></h1>
                 <Button className="w-1/4 bg-red-700 font-extrabold text-xl"><Link href={`/auth/book-ad/signup`} className="py-3">Book Ad</Link></Button>
 

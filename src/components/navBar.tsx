@@ -13,16 +13,9 @@ import {
     DialogContent,
     DialogDescription,
     DialogHeader,
-    DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
 
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-} from "@/components/ui/card"
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
@@ -345,7 +338,7 @@ const NavBar: React.FC = () => {
                                                 <div className="flex flex-col gap-5">
                                                     <h2 className="text-4xl font-semibold text-slate-900">Wellcome to AdVentures</h2>
                                                     <p className="text-lg font-serif text-slate-900">
-                                                        Whether you're a driver looking to earn passive income or a business looking for targeted ads, Ad Ventures has the solution for you!
+                                                        Whether you are a driver looking to earn passive income or a business looking for targeted ads, Ad Ventures has the solution for you!
                                                     </p>
                                                 </div>
                                                 <div className="flex justify-between gap-10">

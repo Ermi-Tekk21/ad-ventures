@@ -27,7 +27,7 @@ const formSchema = z.object({
     country: z.string().min(2, "Country is required"),
 })
 
-const signupDr: React.FC = () => {
+const SignUpForDr: React.FC = () => {
     // Initialize form using the schema
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -68,7 +68,7 @@ const signupDr: React.FC = () => {
             </div>
 
             {/* Right Side: Form */}
-            <div className="w-1/2 h-3/4 max-md:pt-20 md:pt-10 flex flex-col gap-8">
+            <div className="w-1/2 max-md:w-full h-3/4 max-md:pt-20 md:pt-10 flex flex-col gap-8">
 
                 <Link href='/' className="max-sm:text:lg text-slate-900 absolute top-0 font-heading sm:hidden font-bold z-50 max-sm:p-8">Ad Ventures</Link>
 
@@ -163,7 +163,7 @@ const signupDr: React.FC = () => {
     )
 }
 
-export default signupDr;
+export default SignUpForDr;
 
 
 
