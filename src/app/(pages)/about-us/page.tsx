@@ -13,10 +13,10 @@ import Link from "next/link";
 
 const AboutUsSection: React.FC = () => {
     return (
-        <div className="flex flex-col md:flex-row justify-center items-center p-8 pt-20 bg-gray-100 max-md:mt-10">
+        <div className="flex flex-col md:flex-row justify-center items-center p-8 pt-20 bg-gray-100">
             {/* Left Side: About Us Information */}
             <div className="md:w-1/2 p-4">
-                <h1 className="text-4xl font-bold mb-4 text-gray-800">About Us</h1>
+                <h1 className="text-4xl font-bold mb-4 text-gray-800 max-md:pt-10">About Us</h1>
                 <p className="text-lg mb-4 text-gray-600">
                     At Ad Ventures, we are dedicated to transforming the advertising landscape for drivers and businesses. Our platform empowers drivers to increase their earnings effortlessly while offering advertisers unmatched access to a diverse audience.
                 </p>

@@ -168,7 +168,7 @@ const Hero: React.FC = () => {
                         <CarouselContent className="flex">  {/* Use flex to align the items horizontally */}
                             {Trusted.map((item) => (
                                 <CarouselItem key={item.id} className="flex-none w-1/ 3"> {/* Ensure each item takes 1/3 of the screen */}
-                                    <div className="h-full py-8 px-6">  {/* Padding adjusted for spacing */}
+                                    <div className="h-full py-8 px-6 max-sm:py-2">  {/* Padding adjusted for spacing */}
                                         <div className="py-6">
                                             <Image
                                                 width={150}

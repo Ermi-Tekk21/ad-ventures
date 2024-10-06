@@ -5,7 +5,7 @@ const PricingSection: React.FC = () => {
         <div className="pt-40 md:px-20 pb-10">
             <div className="flex flex-col md:px-16 text-center justify-center">
                 <h1 className="text-4xl font-bold mb-4 text-gray-800">Affordable Pricing Plans</h1>
-                <p className="text-lg mb-4 text-gray-600">
+                <p className="text-lg max-md:px-2 mb-4 text-gray-600">
                     At Ad Ventures, we offer competitive pricing plans to suit all types of advertisers. Choose the perfect package for your needs and start reaching your audience today!
                 </p>
             </div>
