@@ -46,7 +46,7 @@ const Chart: React.FC = () => {
                         <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
                     </BarChart>
                 </ChartContainer>
-                <p className="font-light">Monthly subscriber to our platform</p>
+                <p className="font-light text-slate-700 dark:text-slate-500">Monthly subscriber to our platform</p>
 
             </div>
         </main>

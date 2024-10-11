@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
@@ -28,14 +29,21 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}
-      >
-        <Sidebar />
-        <div className="w-full bg-indigo-950 text-white h-screen">
-          <Header />
-          {children}
-        </div>
-      </body>
+                className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}
+            >
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                    disableTransitionOnChange
+                >
+
+                    <Sidebar />
+                    <div className="w-full dark:bg-indigo-950 text-white h-screen">
+                        <Header />
+                        {children}
+                    </div></ThemeProvider>
+            </body>
         </html>
     );
 }

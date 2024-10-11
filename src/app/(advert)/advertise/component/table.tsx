@@ -11,7 +11,7 @@ import {
 const TableTr: React.FC = () => {
     return (
         <main>
-            <Table>
+            <Table className="text-slate-900 dark:text-slate-50">
                 <TableCaption>A list of your recent invoices.</TableCaption>
                 <TableHeader>
                     <TableRow>

@@ -164,7 +164,9 @@ const Hero: React.FC = () => {
                 <div className="trustedBy w-full bg-navBg rounded-lg opacity-90">
                     <p className="text-center text-3xl font-bold p-5 text-white">Trusted by</p>
                     {/* testimonial */}
-                    <div className="flex justify-center"><Carousel className="w-4/5">  {/* Full width and height */}
+                    <div className="flex justify-center">
+                        
+                        <Carousel className="w-4/5">  {/* Full width and height */}
                         <CarouselContent className="flex">  {/* Use flex to align the items horizontally */}
                             {Trusted.map((item) => (
                                 <CarouselItem key={item.id} className="flex-none w-1/ 3"> {/* Ensure each item takes 1/3 of the screen */}
