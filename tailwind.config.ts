@@ -24,6 +24,7 @@ module.exports = {
     			white: '#ffffff',
     			black: '#000000',
     			navBg: '#181717F0',
+    			sidebarBg: '#000121',
     			background: 'hsl(var(--background))',
     			foreground: 'hsl(var(--foreground))',
     			card: {
