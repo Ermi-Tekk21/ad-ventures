@@ -1,10 +1,13 @@
 "use client"
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import useNotificationsStore from '@/store/notificationsStore';
 const Sidebar: React.FC = () => {
+    const { notifications } = useNotificationsStore();
+    const UnReadNotification = notifications.filter((singleNotification) => singleNotification.isRead === false).length
     const pathname = usePathname();
     return (
-        <div className="w-[250px] max-md:hidden relative flex flex-col gap-10 h-screen dark:bg-sidebarBg items-center pt-6 z-50">
+        <div className="w-[250px] max-md:hidden relative flex flex-col bg-slate-50 gap-10 h-screen dark:bg-sidebarBg items-center pt-6 z-50">
             <div className="flex flex-col gap-4 items-center">
                 <h1 className="text-2xl font-extrabold dark:text-white">Ad Ventures</h1>
                 <hr className="border-white border-2 w-1/2" />
@@ -50,7 +53,7 @@ const Sidebar: React.FC = () => {
                     </li>
 
 
-                    <li className={`flex gap-2 ${pathname === "/advertise/notification" ? "font-bold" : "font-light"}`}>
+                    <li className={`flex relative gap-2 ${pathname === "/advertise/notification" ? "font-bold" : "font-light"}`}>
 
                         {
                             pathname === "/advertise/notification" && (
@@ -59,8 +62,9 @@ const Sidebar: React.FC = () => {
                         }
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-bell-ring"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" /><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" /><path d="M4 2C2.8 3.7 2 5.7 2 8" /><path d="M22 8c0-2.3-.8-4.3-2-6" /></svg>
-
-
+                        {
+                            (UnReadNotification >= 1) && <p className="px-2 py-1 absolute right-0 -mr-7 -mt-3 top-0 rounded-full bg-red-700  text-xs text-white">{UnReadNotification}</p>
+                        }
                         <Link href={`/advertise/notification`}>Notification</Link>
                     </li>
 

@@ -37,11 +37,16 @@ const LoginForAd: React.FC = () => {
 
     // Submit handler
     function onSubmit(values: z.infer<typeof formSchema>) {
+        if (values) {
+            alert("loged in succussfully")
+            window.location.href = '/advertise'
+        }
+
         console.log(values) // You can replace this with the login logic
     }
 
     return (
-        <div className="flex h-screen">
+        <div className="flex h-screen w-screen">
             {/* Left Side: Image with Text */}
             <div className="hidden md:flex w-1/2 relative bg-slate-800">
                 <Link href='/' className="md:text-3xl text-white font-heading font-bold z-50 md:p-8">Ad Ventures</Link>

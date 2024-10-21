@@ -41,7 +41,7 @@ const LoginForDr: React.FC = () => {
     }
 
     return (
-        <div className="flex h-screen">
+        <div className="flex h-screen w-screen">
             {/* Left Side: Image with Text */}
             <div className="hidden md:flex w-1/2 relative bg-slate-800">
                 <Link href='/' className="md:text-3xl text-white font-heading font-bold z-50 md:p-8">Ad Ventures</Link>
