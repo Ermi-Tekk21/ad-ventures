@@ -1,19 +1,17 @@
 "use client"
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { userInfo } from "@/utils/data/BookAdAccountData";
-import { EditProfile } from "./components/EditProfile";
 import { Button } from "@/components/ui/button";
+import { userInfo } from "@/utils/data/driver/driverData";
+import { EditProfile } from "@/app/(advert)/advertise/account/components/EditProfile";
 
-
-const Account: React.FC = () => {
-
+const DriverAccount: React.FC = () => {
     return (
         <main className="z-10 dark:bg-indigo-950">
             <ScrollArea className="h-screen w-full pt-16 rounded-md border">
                 <div className="bg-gray-100 dark:bg-indigo-950 flex flex-col items-center p-6">
-                    <div className="max-w-4xl w-full bg-white  dark:bg-opacity-10 dark:bg-none rounded-lg shadow-md p-8">
+                    <div className="max-w-4xl w-full bg-white dark:bg-opacity-10 dark:bg-none rounded-lg shadow-md p-8">
                         {/* Profile Header */}
-                        <div className="flex flex-col items-center">    
+                        <div className="flex flex-col items-center">
                             <img
                                 src={userInfo.profileImage}
                                 alt="Profile"
@@ -35,9 +33,34 @@ const Account: React.FC = () => {
                         </div>
                     </div>
 
+                    {/* Driver Information Section */}
+                    <div className="mt-8 max-w-4xl w-full bg-white dark:bg-opacity-10 dark:bg-none rounded-lg shadow-md p-6">
+                        <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Driver Information</h3>
+                        <div className="grid grid-cols-2 gap-6">
+                            <div>
+                                <h4 className="font-semibold dark:text-slate-200 text-gray-700">Taxi Number:</h4>
+                                <p className="text-gray-600 dark:text-slate-300">{userInfo.taxiNumber}</p>
+                            </div>
+                            <div>
+                                <h4 className="font-semibold dark:text-slate-200 text-gray-700">Working Area:</h4>
+                                <p className="text-gray-600 dark:text-slate-300">{userInfo.workingArea}</p>
+                            </div>
+                            <div>
+                                <h4 className="font-semibold dark:text-slate-200 text-gray-700">Has Billboard:</h4>
+                                <p className="text-gray-600 dark:text-slate-300">
+                                    {userInfo.hasBillboard ? "Yes" : "No"}
+                                </p>
+                            </div>
+                            <div>
+                                <h4 className="font-semibold dark:text-slate-200 text-gray-700">Taxi Specification:</h4>
+                                <p className="text-gray-600 dark:text-slate-300">{userInfo.taxiSpecification}</p>
+                            </div>
+                        </div>
+                    </div>
+
                     {/* Additional Info Section */}
                     <div className="mt-8 max-w-4xl w-full bg-white dark:bg-opacity-10 dark:bg-none rounded-lg shadow-md p-6">
-                        <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">User Information</h3>
+                        <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Additional Details</h3>
                         <div className="grid grid-cols-2 gap-6">
                             <div>
                                 <h4 className="font-semibold dark:text-slate-200 text-gray-700">Username:</h4>
@@ -53,7 +76,7 @@ const Account: React.FC = () => {
                 </div>
             </ScrollArea>
         </main>
-    )
+    );
 }
 
-export default Account;
+export default DriverAccount;
