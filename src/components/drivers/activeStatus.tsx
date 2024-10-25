@@ -2,68 +2,60 @@
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { EarnPerMon } from "@/components/drivers/earnPerMonthChart";
 import { TableDemo } from "@/components/drivers/currentAd";
-import { useState, useEffect } from "react";
 
 const ActiveStatus: React.FC = () => {
 
-
-
-    // State to manage visibility
-    const [isVisible, setIsVisible] = useState(true);
-    // useEffect to hide content after 5 seconds
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsVisible(false); // Hide content after 5 seconds
-        }, 5000);
-
-        // Clean up the timer if the component unmounts
-        return () => clearTimeout(timer);
-    }, []);
     return (
         <div>
-            <div className="relative">
-                <div className="absolute top-16 overflow-hidden h-64 w-full">
-                    {isVisible && ( // Conditionally render based on isVisible state
-                        <div className="w-full items-end flex gap-2 h-auto animate-move-left-right">
-                            <p className="text-slate-800 font-mono font-light dark:text-slate-200">Hello Drivers</p>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#7e7777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide border-b-2 border-yellow-700 lucide-car"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" /><circle cx="7" cy="17" r="2" /><path d="M9 17h6" /><circle cx="17" cy="17" r="2" /></svg>
-                        </div>
-                    )}{/* scroll heading */}
-                    {!isVisible && (
-                        <div className="text-slate-800 pt-2 flex justify-around">
-                            <div className="flex gap-4 bg-slate-50 md:py-4 md:px-8 border-2 rounded-lg dark:bg-cardBg items-center">
-                                <div className="text-slate-800 border-b-2 dark:text-slate-100 font-mono">1200
+            <div className="">
 
-                                    <span className="text-slate-800 text-2xl dark:text-slate-50 font-bold"> plus </span>
-                                    drivers</div>
-                            </div>
-
-                            <div className="flex gap-4 bg-slate-50 md:py-4 md:px-8 border-2 rounded-lg dark:bg-cardBg items-center">
-                                <div className="text-slate-800 border-b-2 dark:text-slate-100 font-mono">
-                                    <span className="text-slate-800 text-2xl dark:text-slate-50 font-bold">over </span>
-                                    1500
-
-                                    Ads</div>
-                            </div>
-
-
-                            <div className="flex gap-4 bg-slate-50 md:py-4 md:px-8 border-2 rounded-lg dark:bg-cardBg items-center">
-                                <div className="text-slate-800 border-b-2 dark:text-slate-100 font-mono">
-                                    <span className="text-slate-800 text-2xl dark:text-slate-50 font-bold">over </span>    189
-
-                                    client</div>
-                            </div>
-                        </div>
-                    )}
+                <ScrollArea className="h-screen w-full pt-16 px-10 rounded-md border">
+                    
+                {/* Welcome Message */}
+                <div className="mb-6 px-6 py-6 mt-5 bg-slate-100 dark:bg-cardBg rounded-md shadow text-center text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-50">
+                    Welcome driver! <span className="font-bold">The more you drive, the more you earn.</span>
                 </div>
-                <ScrollArea className="h-screen w-full pt-36 rounded-md border">
-                    <div className="flex justify-around">
-                        <div className="w-3/5 px-16 py-10">
-                            <EarnPerMon />
-                        </div><div className="w-3/5  px-16 py-10">
-                            <TableDemo />
+                
+                <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10 px-8">
+                    
+                    {/* Earnings Chart */}
+                    <div className="w-full lg:w-1/2 p-8 bg- bg-slate-100 dark:bg-cardBg shadow rounded-md">
+                        <EarnPerMon />
+                    </div>
+
+                    {/* Summary Stats */}
+                    <div className="flex flex-col gap-6 lg:w-1/3 w-full text-slate-800 dark:text-slate-200">
+                        <div className="flex flex-col gap-4">
+                            {[
+                                { value: "1200+", label: "drivers" },
+                                { value: "1500+", label: "Ads" },
+                                { value: "189+", label: "clients" }
+                            ].map((item, index) => (
+                                <div key={index} className="flex items-center gap-4 p-4 md:px-6 md:py-5 bg-slate-50 dark:bg-cardBg border-2 border-slate-200 dark:border-slate-700 rounded-lg shadow">
+                                    <div className="text-xl md:text-2xl font-bold dark:text-slate-50">
+                                        {item.value}
+                                    </div>
+                                    <div className="text-lg md:text-xl font-mono text-slate-700 dark:text-slate-100">
+                                        {item.label}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Total Earnings Card */}
+                        <div className="p-4 md:p-6 bg-slate-50 dark:bg-cardBg border-2 border-slate-200 dark:border-slate-700 rounded-lg shadow">
+                            <div className="text-xl md:text-2xl font-bold dark:text-slate-50">
+                                Total Earnings
+                            </div>
+                            <div className="text-lg md:text-xl font-mono text-slate-700 dark:text-slate-100 mt-2">
+                                $25,000
+                            </div>
+                            <p className="text-sm md:text-base text-slate-600 dark:text-slate-400">
+                                This is the total amount of money you have earned to date.
+                            </p>
                         </div>
                     </div>
+                </div>
                 </ScrollArea>
             </div>
         </div>
