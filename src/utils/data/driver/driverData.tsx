@@ -7,5 +7,5 @@ export const userInfo = {
     workingArea: "Downtown and Airport Area",
     hasBillboard: true,
     taxiSpecification: "Toyota Prius 2015, Yellow Taxi",
-    status: "pending",
+    status: "active",
 };
