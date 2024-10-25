@@ -64,8 +64,8 @@ const Pichart=()=> {
     <Card className="flex flex-col">
       <div className="flex items-center">
       <CardHeader className="items-center pb-0">
-        <CardTitle>Pie Chart - Donut with Text</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+        <CardTitle>our visitors</CardTitle>
+        <CardDescription>this year</CardDescription>
       </CardHeader>
       <CardContent className="flex-1 pb-0">
         <ChartContainer

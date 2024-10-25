@@ -41,8 +41,9 @@ export default function RootLayout({
                     <Sidebar />
                     <div className="w-full dark:bg-indigo-950 text-white h-screen">
                         <Header />
-                        {children}
-                    </div></ThemeProvider>
+                            {children}
+                    </div>
+                </ThemeProvider>
             </body>
         </html>
     );

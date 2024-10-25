@@ -42,7 +42,7 @@ export default async function DemoPage() {
   return (
     <div className="w-full flex flex-col gap-5 p-4">
       <DataTable columns={columns} data={data} />
-      <p className="font-light text-slate-800 font-serif font dark:text-slate-700">Monthly subscriber to our platform</p>
+      <p className="font-light text-slate-800 font-serif dark:text-slate-400 text-center border-[0.5px] border-slate-500 dark:border-slate-100 text-sm rounded-sm px-3 "> your ad requests status</p>
     </div>
   )
 }
