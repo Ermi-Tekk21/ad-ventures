@@ -27,9 +27,67 @@ export const Testimonials = [
     image: "https://readymadeui.com/team-2.webp",
     description: "Ad Ventures has transformed the way we advertise! The ability to target audiences in real-time with precision has boosted our sales significantly."
   },
+  {
+    id: 1,
+    name: "John Doe",
+    title: "CEO, Company Name",
+    image: "https://readymadeui.com/team-2.webp",
+    description: "Ad Ventures has transformed the way we advertise! The ability to target audiences in real-time with precision has boosted our sales significantly."
+  },
+  {
+    id: 2,
+    name: "John Doe2",
+    title: "CEO, Company Name",
+    image: "https://readymadeui.com/team-2.webp",
+    description: "Ad Ventures has transformed the way we advertise! The ability to target audiences in real-time with precision has boosted our sales significantly."
+  },
+  {
+    id: 3,
+    name: "John Doe3",
+    title: "CEO, Company Name",
+    image: "https://readymadeui.com/team-2.webp",
+    description: "Ad Ventures has transformed the way we advertise! The ability to target audiences in real-time with precision has boosted our sales significantly."
+  },
+  {
+    id: 4,
+    name: "John Doe4",
+    title: "CEO, Company Name",
+    image: "https://readymadeui.com/team-2.webp",
+    description: "Ad Ventures has transformed the way we advertise! The ability to target audiences in real-time with precision has boosted our sales significantly."
+  },
 ]
 
 export const Trusted = [
+  {
+    id: 1,
+    name: "Company Name",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbTb6W2blf6vzDqvf5O1Nf5HngCZVgWtTC6Q&s",
+  },
+  {
+    id: 2,
+    name: "Company Name",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbTb6W2blf6vzDqvf5O1Nf5HngCZVgWtTC6Q&s",
+  },
+  {
+    id: 3,
+    name: "Company Name",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbTb6W2blf6vzDqvf5O1Nf5HngCZVgWtTC6Q&s",
+  },
+  {
+    id: 4,
+    name: "Company Name",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbTb6W2blf6vzDqvf5O1Nf5HngCZVgWtTC6Q&s",
+  },
+  {
+    id: 5,
+    name: "Company Name",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbTb6W2blf6vzDqvf5O1Nf5HngCZVgWtTC6Q&s",
+  },
+  {
+    id: 6,
+    name: "Company Name",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbTb6W2blf6vzDqvf5O1Nf5HngCZVgWtTC6Q&s"
+  },
   {
     id: 1,
     name: "Company Name",
