@@ -1,3 +1,6 @@
+// userInfo data
+import { TaxiPackages } from "@/utils/data/index";
+
 export const userInfo = {
     profileImage: "/path/to/profile.jpg",
     name: "John Doe",
@@ -6,6 +9,7 @@ export const userInfo = {
     taxiNumber: "TX-12345",
     workingArea: "Downtown and Airport Area",
     hasBillboard: true,
-    taxiSpecification: "Toyota Prius 2015, Yellow Taxi",
-    status: "active",
+    taxiSpec: "Toyota Prius 2015, Yellow Taxi",  // Changed from taxiSpecification
+    status: "active", // or pending
+    pkgDrInvolvedIn: [TaxiPackages[0], TaxiPackages[3]],
 };
