@@ -221,8 +221,8 @@ export const TaxiPackages = [
     taxiAds: 5,
     adDuration: "1 week",
     mapUrls: [
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1999.123456789!2d39.29529920128635!3d8.567725037913522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1",
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1999.123456789!2d39.29529920128635!3d8.567725037913522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1"
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.282017164858!2d39.2918746099691!3d8.568858391439697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b1fe4c294e6cb%3A0x6b86d6a89f24215c!2sAdama%20Science%20And%20Technology%20University%20-%20ASTU!5e0!3m2!1sen!2set!4v1729970109897!5m2!1sen!2set",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.282017164858!2d39.2918746099691!3d8.568858391439697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b1fe4c294e6cb%3A0x6b86d6a89f24215c!2sAdama%20Science%20And%20Technology%20University%20-%20ASTU!5e0!3m2!1sen!2set!4v1729970109897!5m2!1sen!2set"
     ],
     support: "Email support",
     description: "Perfect for local businesses wanting to get started with taxi advertising. Ads will be displayed on a limited number of taxis for short durations, offering an affordable way to test campaigns."
@@ -247,8 +247,8 @@ export const TaxiPackages = [
     taxiAds: 50,
     adDuration: "1 month",
     mapUrls: [
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1999.123456789!2d39.29529920128635!3d8.567725037913522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1",
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1999.123456789!2d39.29529920128635!3d8.567725037913522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1"
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.282017164858!2d39.2918746099691!3d8.568858391439697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b1fe4c294e6cb%3A0x6b86d6a89f24215c!2sAdama%20Science%20And%20Technology%20University%20-%20ASTU!5e0!3m2!1sen!2set!4v1729970109897!5m2!1sen!2set",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.282017164858!2d39.2918746099691!3d8.568858391439697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b1fe4c294e6cb%3A0x6b86d6a89f24215c!2sAdama%20Science%20And%20Technology%20University%20-%20ASTU!5e0!3m2!1sen!2set!4v1729970109897!5m2!1sen!2set"
     ],
     support: "24/7 chat and email support",
     description: "Best for businesses with more ambitious marketing goals. The extended reach of your ads through more taxis and an entire month of exposure ensures maximum visibility."
