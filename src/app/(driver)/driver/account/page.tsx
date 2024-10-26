@@ -53,30 +53,48 @@ const DriverAccount: React.FC = () => {
                             </div>
                             <div>
                                 <h4 className="font-semibold dark:text-slate-200 text-gray-700">Taxi Specification:</h4>
-                                <p className="text-gray-600 dark:text-slate-300">{userInfo.taxiSpecification}</p>
+                                <p className="text-gray-600 dark:text-slate-300">{userInfo.taxiSpec}</p>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                    <div className="mt-8 max-w-4xl w-full bg-white dark:bg-opacity-10 dark:bg-none rounded-lg shadow-md p-6">
+                        <div className="mt-4 w-full">
+                            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
+                                Packages Assigned to the Driver (You)
+                            </h3>
+
+                            {/* Flex container for the packages */}
+                            <div className="flex justify-center flex-wrap gap-4">
+                                {userInfo.pkgDrInvolvedIn.map((pkg, index) => (
+                                    <li
+                                        key={index}
+                                        className="flex-1 min-w-[250px] max-w-[350px] p-4 bg-gray-50 dark:bg-indigo-950 shadow-lg rounded-lg 
+                   hover:bg-indigo-100 dark:hover:bg-indigo-800 transition-colors duration-300 border dark:border-gray-700"
+                                    >
+                                        <div className="flex flex-col space-y-2">
+                                            <div className="text-indigo-600 dark:text-indigo-300 font-semibold text-lg">
+                                                {pkg.name}
+                                            </div>
+                                            <div className="text-gray-600 dark:text-gray-400 text-sm">
+                                                {pkg.description || "This is a sample description of the package."}
+                                            </div>
+                                        </div>
+                                    </li>
+                                ))}
                             </div>
                         </div>
+
                     </div>
 
-                    {/* Additional Info Section */}
-                    <div className="mt-8 max-w-4xl w-full bg-white dark:bg-opacity-10 dark:bg-none rounded-lg shadow-md p-6">
-                        <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Additional Details</h3>
-                        <div className="grid grid-cols-2 gap-6">
-                            <div>
-                                <h4 className="font-semibold dark:text-slate-200 text-gray-700">Username:</h4>
-                                <p className="text-gray-600 dark:text-slate-300">{userInfo.name}</p>
-                            </div>
-                            <div>
-                                <h4 className="font-semibold dark:text-slate-200 text-gray-700">Email:</h4>
-                                <p className="text-gray-600 dark:text-slate-300">{userInfo.email}</p>
-                            </div>
-                            {/* Add more details as needed */}
-                        </div>
-                    </div>
+
                 </div>
             </ScrollArea>
         </main>
     );
-}
+};
 
 export default DriverAccount;

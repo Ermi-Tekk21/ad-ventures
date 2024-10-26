@@ -1,41 +1,40 @@
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+  DialogFooter,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export function EditProfile({
   user,
 }: {
   user: {
-    name: string,
-    email: string,
-    bio: string,
-    profileImage: string,
-    taxiNumber: string,
-    workingArea: string,
-    hasBillboard: boolean,
-    taxiSpec: string,
-  }
+    name: string;
+    email: string;
+    bio: string;
+    profileImage: string;
+    taxiNumber: string;
+    workingArea: string;
+    hasBillboard: boolean;
+    taxiSpec: string;
+  };
 }) {
-  const [profileImage, setProfileImage] = useState(user.profileImage)
+  const [profileImage, setProfileImage] = useState(user.profileImage);
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]
+    const file = event.target.files?.[0];
     if (file) {
-      const imageUrl = URL.createObjectURL(file)
-      setProfileImage(imageUrl)
-      // Here you could also handle image upload logic
+      const imageUrl = URL.createObjectURL(file);
+      setProfileImage(imageUrl);
+      // Additional image upload logic if needed
     }
-  }
+  };
 
   return (
     <Dialog>
@@ -46,7 +45,7 @@ export function EditProfile({
       </DialogTrigger>
       <DialogContent className="sm:max-w-3/4">
         <DialogHeader>
-          <DialogTitle>Edit Profile</DialogTitle> 
+          <DialogTitle>Edit Profile</DialogTitle>
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="flex flex-col items-center gap-4">
@@ -108,5 +107,5 @@ export function EditProfile({
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
