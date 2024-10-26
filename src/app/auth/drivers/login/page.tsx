@@ -37,6 +37,8 @@ const LoginForDr: React.FC = () => {
 
     // Submit handler
     function onSubmit(values: z.infer<typeof formSchema>) {
+        alert("loged in succussfully")
+        window.location.href = '/driver'
         console.log(values) // You can replace this with the login logic
     }
 

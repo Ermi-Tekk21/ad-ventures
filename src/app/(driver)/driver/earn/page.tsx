@@ -1,3 +1,4 @@
+import AdventuresEarningPage from "@/components/drivers/earnSecWhenActive";
 import InitSteps from "@/components/drivers/initSteps";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { userInfo } from "@/utils/data/driver/driverData";
@@ -13,7 +14,9 @@ const Page = () => {
             {
                 userInfo.status === "active" && (
                     <div>
-                        active...
+                        <ScrollArea className="h-screen w-full pt-16 rounded-md border">
+                            <AdventuresEarningPage />
+                        </ScrollArea>
                     </div>
                 )
             }
