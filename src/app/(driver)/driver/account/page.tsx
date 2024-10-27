@@ -12,11 +12,15 @@ const DriverAccount: React.FC = () => {
                     <div className="max-w-4xl w-full bg-white dark:bg-opacity-10 dark:bg-none rounded-lg shadow-md p-8">
                         {/* Profile Header */}
                         <div className="flex flex-col items-center">
-                            <img
-                                src={userInfo.profileImage}
-                                alt="Profile"
-                                className="w-32 h-32 rounded-full shadow-md mb-4"
-                            />
+                            <div className="w-36 h-36 rounded-full shadow-md mb-4 border-4 border-gray-300 flex items-center justify-center">
+                                <img
+                                    src={userInfo.profileImage}
+                                    alt="Profile"
+                                    className="w-32 h-32 rounded-full"
+                                />
+                            </div>
+
+
                             <h2 className="text-3xl dark:text-white font-bold text-gray-900">{userInfo.name}</h2>
                             <p className="text-gray-600 dark:text-slate-50 mb-4">{userInfo.email}</p>
                             <p className="text-center dark:text-slate-100 text-gray-700">{userInfo.bio}</p>
