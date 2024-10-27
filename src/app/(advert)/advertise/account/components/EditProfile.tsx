@@ -19,12 +19,11 @@ export function EditProfile({
     email: string;
     bio: string;
     profileImage: string;
-    taxiNumber: string;
-    workingArea: string;
-    hasBillboard: boolean;
-    taxiSpec: string;
   };
 }) {
+  const [name, setName] = useState(user.name);
+  const [email, setEmail] = useState(user.email);
+  const [bio, setBio] = useState(user.bio);
   const [profileImage, setProfileImage] = useState(user.profileImage);
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,8 +31,21 @@ export function EditProfile({
     if (file) {
       const imageUrl = URL.createObjectURL(file);
       setProfileImage(imageUrl);
-      // Additional image upload logic if needed
+      // Additional image upload logic can be implemented here
     }
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const updatedUser = {
+      name,
+      email,
+      bio,
+      profileImage,
+    };
+
+    // Implement the update logic here (e.g., API call)
+    console.log('Updated User:', updatedUser);
   };
 
   return (
@@ -47,7 +59,7 @@ export function EditProfile({
         <DialogHeader>
           <DialogTitle>Edit Profile</DialogTitle>
         </DialogHeader>
-        <div className="grid gap-4 py-4">
+        <form onSubmit={handleSubmit} className="grid gap-4 py-4">
           <div className="flex flex-col items-center gap-4">
             <Label htmlFor="profileImage" className="text-center">
               Profile Image
@@ -69,42 +81,29 @@ export function EditProfile({
             <Label htmlFor="name" className="text-right">
               Name
             </Label>
-            <Input id="name" defaultValue={user.name} className="col-span-3" />
+            <Input
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="col-span-3"
+            />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
+            <Label htmlFor="email" className="text-right">
+              Email
             </Label>
-            <Input id="username" defaultValue={user.email} className="col-span-3" />
+            <Input
+              id="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="col-span-3"
+            />
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="taxiNumber" className="text-right">
-              Taxi Number
-            </Label>
-            <Input id="taxiNumber" defaultValue={user.taxiNumber} className="col-span-3" />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="workingArea" className="text-right">
-              Working Area
-            </Label>
-            <Input id="workingArea" defaultValue={user.workingArea} className="col-span-3" />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="hasBillboard" className="text-right">
-              Has Billboard
-            </Label>
-            <Input id="hasBillboard" defaultValue={user.hasBillboard ? "Yes" : "No"} className="col-span-3" />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="taxiSpec" className="text-right">
-              Taxi Specification
-            </Label>
-            <Input id="taxiSpec" defaultValue={user.taxiSpec} className="col-span-3" />
-          </div>
-        </div>
-        <DialogFooter>
-          <Button type="submit">Save Changes</Button>
-        </DialogFooter>
+          <DialogFooter>
+            <Button type="submit">Save Changes</Button>
+          </DialogFooter>
+        </form>
       </DialogContent>
     </Dialog>
   );
