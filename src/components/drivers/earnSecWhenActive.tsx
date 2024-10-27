@@ -4,11 +4,11 @@ const PackageAssigned = userInfo.pkgDrInvolvedIn
 
 const AdventuresEarningPage: React.FC = () => {
     return (
-        <div className="flex flex-col gap">
-            {PackageAssigned.map((packageData, index) => (
-                <div key={index} className="max-w-4xl mx-auto p-6 bg-white dark:bg-opacity-5 rounded-lg shadow-lg">
-                    <h1 className="text-3xl font-bold mb-4 text-blue-800 dark:text-blue-500">Earnings - Package Details</h1>
+        <div className="relative flex flex-col gap-4">
+                                <h1 className="fixed text-2xl font-bold mb-4 text-blue-800 dark:text-blue-500 bg-indigo-950 w-full">Earnings - Package Details</h1>
 
+            {PackageAssigned.map((packageData, index) => (
+                <div key={index} className="max-w-4xl mx-auto px-6 py-10 bg-white dark:bg-opacity-5 rounded-lg shadow-lg">
                     <section className="mb-6">
                         <h2 className="text-2xl font-semibold text-blue-700 dark:text-blue-600">{packageData.name}</h2>
                         <p className="text-lg dark:text-slate-300 text-gray-700">{packageData.price}</p>
