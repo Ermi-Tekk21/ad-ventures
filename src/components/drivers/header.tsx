@@ -61,7 +61,7 @@ const Header: React.FC = () => {
                                             <polyline points="16 17 21 12 16 7" />
                                             <line x1="21" x2="9" y1="12" y2="12" />
                                         </svg>
-                                        <Link href={`/auth/driver/login`}>Logout</Link>
+                                        <Link href={`/auth/drivers/login`}>Logout</Link>
                                     </div>
                                 </DropdownMenuItem>
                             </DropdownMenuContent>
