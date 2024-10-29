@@ -25,7 +25,7 @@ const formSchema = z.object({
     cvv: z.string().regex(/^\d{3,4}$/, { message: "CVV must be 3 or 4 digits" }),
 })
 
-const PaymentForm = ({ handleNext, price }: { handleNext: () => void; price: string }) => {
+const PaymentForm = ({ handleNext, price }: { handleNext: () => void; price: number }) => {
     // Define the form with react-hook-form and zod schema
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -56,7 +56,7 @@ const PaymentForm = ({ handleNext, price }: { handleNext: () => void; price: str
                         <FormItem>
                             <FormLabel className="text-slate-900 dark:text-slate-100">Cardholder Name</FormLabel>
                             <FormControl>
-                                <Input placeholder="John Doe" className="dark:border-slate-400" {...field} />
+                                <Input placeholder="John Doe" className="dark:border-slate-400 text-slate-600 dark:text-slate-100" {...field} />
                             </FormControl>
                             <FormDescription>
                                 The name as it appears on your card.
@@ -74,7 +74,7 @@ const PaymentForm = ({ handleNext, price }: { handleNext: () => void; price: str
                         <FormItem>
                             <FormLabel className="text-slate-900 dark:text-slate-100">Card Number</FormLabel>
                             <FormControl>
-                                <Input type="text" placeholder="1234 5678 9012 3456" className="dark:border-slate-400" {...field} />
+                                <Input type="text" placeholder="1234 5678 9012 3456" className="dark:border-slate-400 text-slate-600 dark:text-slate-100" {...field} />
                             </FormControl>
                             <FormDescription>
                                 Enter the 16-digit card number.
@@ -92,7 +92,7 @@ const PaymentForm = ({ handleNext, price }: { handleNext: () => void; price: str
                         <FormItem>
                             <FormLabel className="text-slate-900 dark:text-slate-100">Expiration Date</FormLabel>
                             <FormControl>
-                                <Input type="text" className="dark:border-slate-400" placeholder="MM/YY" {...field} />
+                                <Input type="text" className="dark:border-slate-400 text-slate-600 dark:text-slate-100" placeholder="MM/YY" {...field} />
                             </FormControl>
                             <FormDescription>
                                 Enter the expiration date in MM/YY format.
@@ -110,7 +110,7 @@ const PaymentForm = ({ handleNext, price }: { handleNext: () => void; price: str
                         <FormItem>
                             <FormLabel className="text-slate-900 dark:text-slate-100">CVV</FormLabel>
                             <FormControl>
-                                <Input type="text" className="dark:border-slate-400" placeholder="123" {...field} />
+                                <Input type="text" className="dark:border-slate-400 text-slate-600 dark:text-slate-100" placeholder="123" {...field} />
                             </FormControl>
                             <FormDescription>
                                 The 3 or 4 digit security code on the back of your card.
@@ -121,7 +121,7 @@ const PaymentForm = ({ handleNext, price }: { handleNext: () => void; price: str
                 />
 
                 {/* Submit Button */}
-                <Button type="submit">Submit Payment {price}</Button>
+                <Button type="submit">Submit Payment <span className="text-slate-100 bg-green-600 mx-2 px-2 rounded">${price}</span></Button>
             </form>
         </Form>
     )

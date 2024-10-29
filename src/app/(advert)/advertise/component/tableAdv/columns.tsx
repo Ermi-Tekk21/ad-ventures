@@ -6,9 +6,13 @@ import { ColumnDef } from "@tanstack/react-table"
 // You can use a Zod schema here if you want.
 export type Payment = {
   id: string
-  amount: number
-  status: "pending" | "processing" | "success" | "failed"
-  email: string
+  createdBy: string  // Include createdBy to match your data
+  title: string      // Change from adTitle to title
+  description: string
+  file: string
+  pkgType: string    // Change from pkgChoosen to pkgType
+  status: "pending" | "declined" | "success" | "active"; // Add "active" to match CreatedAd
+  price: number
 }
 
 export const columns: ColumnDef<Payment>[] = [
@@ -17,11 +21,23 @@ export const columns: ColumnDef<Payment>[] = [
     header: "Status",
   },
   {
-    accessorKey: "email",
-    header: "Email",
+    accessorKey: "title",  // Change from adTitle to title
+    header: "Ad Title",
   },
   {
-    accessorKey: "amount",
-    header: "Amount",
+    accessorKey: "pkgType",  // Change from pkgChoosen to pkgType
+    header: "Package Chosen",
   },
+  {
+    accessorKey: "file",  // You can add a file column if needed
+    header: "File",
+  },
+  {
+    accessorKey: "createdBy",  // Include createdBy for context if needed
+    header: "Created By",
+  },
+  {
+    accessorKey: "price",  // Add price column if needed
+    header: "Price",
+  }
 ]

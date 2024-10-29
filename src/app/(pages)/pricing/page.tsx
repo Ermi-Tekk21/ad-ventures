@@ -1,3 +1,5 @@
+import { BillboardPackages } from "@/utils/Data/BillboardPackagesDetail";
+import { TaxiPackages } from "@/utils/Data/TaxiPackagesDetail";
 import React from "react";
 
 const PricingSection: React.FC = () => {
@@ -11,48 +13,41 @@ const PricingSection: React.FC = () => {
             </div>
 
             {/* Pricing Options */}
+            <h1 className="font-semibold md:text-lg py-4">Taxi Packages</h1>
             <div className="flex max-md:flex-col items-center justify-around max-md:mx-5 gap-8">
-                {/* Pricing Option 1 */}
-                <div className="border border-gray-300 flex flex-col justify-center rounded-lg p-6 bg-white w-full shadow-md">
-                    <h2 className="text-2xl font-bold mb-2 text-gray-800">Basic Package</h2>
-                    <p className="text-xl text-gray-600">$99 / month</p>
-                    <ul className="list-disc list-inside mb-4 text-gray-600">
-                        <li>10,000 impressions</li>
-                        <li>1 ad placement</li>
-                        <li>Email support</li>
-                    </ul>
-                    <button className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500 transition">
-                        Book Now
-                    </button>
-                </div>
+                {TaxiPackages.map((txPkg, index) => (
+                    <div key={index} className="border border-gray-300 flex flex-col justify-center rounded-lg p-6 bg-white w-full shadow-md">
+                        <h2 className="text-2xl font-bold mb-2 text-gray-800">{txPkg.type}</h2>
+                        <p className="text-xl text-gray-600">${txPkg.price} / month</p>
+                        <ul className="list-disc list-inside mb-4 text-gray-600">
+                            <li>{txPkg.numberOfTaxiInvolved} taxis involved</li>
+                            <li>taxis working area</li>
+                            <ul className="pl-5">{txPkg.workAreaofTaxi.map((area, index) => (
+                                <li className="text-sm font-light" key={index}>
+                                    {area}
+                                </li>
+                            ))}</ul>
+                        </ul>
+                    </div>
+                ))}
 
-                {/* Pricing Option 2 */}
-                <div className="border flex flex-col justify-center border-gray-300 rounded-lg p-6 w-full bg-white shadow-md">
-                    <h2 className="text-2xl font-bold mb-2 text-gray-800">Standard Package</h2>
-                    <p className="text-xl text-gray-600">$199 / month</p>
-                    <ul className="list-disc list-inside mb-4 text-gray-600">
-                        <li>25,000 impressions</li>
-                        <li>2 ad placements</li>
-                        <li>Priority email support</li>
-                    </ul>
-                    <button className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500 transition">
-                        Book Now
-                    </button>
-                </div>
+            </div>
 
-                {/* Pricing Option 3 */}
-                <div className="border flex flex-col justify-center border-gray-300 rounded-lg w-full p-6 bg-white shadow-md">
-                    <h2 className="text-2xl font-bold mb-2 text-gray-800">Premium Package</h2>
-                    <p className="text-xl text-gray-600">$299 / month</p>
-                    <ul className="list-disc list-inside mb-4 text-gray-600">
-                        <li>50,000 impressions</li>
-                        <li>5 ad placements</li>
-                        <li>24/7 support</li>
-                    </ul>
-                    <button className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500 transition">
-                        Book Now
-                    </button>
-                </div>
+            {/* Pricing Options */}
+            <h1 className="font-semibold md:text-lg py-4">Billboard Packages</h1>
+            <div className="flex max-md:flex-col items-center justify-around max-md:mx-5 gap-8">
+                {BillboardPackages.map((BBPkg, index) => (
+                    <div key={index} className="border border-gray-300 flex flex-col justify-center rounded-lg p-6 bg-white w-full shadow-md">
+                        <h2 className="text-2xl font-bold mb-2 text-gray-800">{BBPkg.type}</h2>
+                        <p className="text-xl text-gray-600">${BBPkg.pricePerMonth} / month</p>
+                        <ul className="list-disc list-inside mb-4 text-gray-600">
+                            <li>{BBPkg.impressions} impressions</li>
+                            <li>{BBPkg.placement} placement</li>
+
+                        </ul>
+                    </div>
+                ))}
+
             </div>
         </div>
     );

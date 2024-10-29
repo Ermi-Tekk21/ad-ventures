@@ -18,7 +18,7 @@ import { Button } from "./ui/button"
 import Image from "next/image"
 import Link from "next/link"
 import AboutUsImage from "@/public/asset/ad-4.jpg"
-import { Testimonials, Trusted } from "@/utils/data"
+import { Testimonials, Trusted } from "@/utils/Data/LandingData/index"
 
 
 const Hero: React.FC = () => {

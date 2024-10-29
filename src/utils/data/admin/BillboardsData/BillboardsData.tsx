@@ -1,4 +1,4 @@
-import { BiboardPackages } from "@/utils/data/index";
+import { BillboardPackages } from "@/utils/Data/BillboardPackagesDetail";
 
 
 export const BillboardsData = [
@@ -6,21 +6,21 @@ export const BillboardsData = [
         id: 1,
         location: "Downtown Square",
         screenSize: "1920x1080",
-        packageAssignedId: BiboardPackages[2],
+        // packageAssignedId: BiboardPackages[2],
         status: "active"
     },
     {
         id: 2,
         location: "City Mall Entrance",
         screenSize: "2560x1440",
-        packageAssignedId: BiboardPackages[4],
+        // packageAssignedId: BiboardPackages[4],
         status: "active"
     },
     {
         id: 3,
         location: "Airport Terminal 3",
         screenSize: "3840x2160",
-        packageAssignedId: BiboardPackages[2],
+        // packageAssignedId: BiboardPackages[2],
         status: "active"
     },
     {
@@ -41,7 +41,7 @@ export const BillboardsData = [
         id: 6,
         location: "Main Street Plaza",
         screenSize: "1920x1080",
-        packageAssignedId: BiboardPackages[1],
+        // packageAssignedId: BiboardPackages[1],
         status: "active"
     },
     {
@@ -62,7 +62,7 @@ export const BillboardsData = [
         id: 9,
         location: "Train Station Platform B",
         screenSize: "1920x1080",
-        packageAssignedId: BiboardPackages[0],
+        // packageAssignedId: BiboardPackages[0],
         status: "active"
     },
     {

@@ -4,8 +4,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
-import { faqData } from "@/utils/data";
-
+import { faqData } from "@/utils/Data/LandingData";
 
 const FAQ: React.FC = () => {
     return (
