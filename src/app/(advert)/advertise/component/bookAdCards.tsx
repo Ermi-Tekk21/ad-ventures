@@ -57,12 +57,6 @@ export function CarouselSpacing({ adType }: CarouselSpacingProps) {
                                 <p className="text-xl text-gray-600">{item.price} per month</p>
                                 <ul className="list-disc list-inside mb-4 text-gray-600">
                                     <li>{item.numberOfTaxiInvolved} number of taxi involved</li>
-                                    <li><strong>Working area</strong></li>
-                                    {item.workAreaofTaxi.map((area, index) => (
-                                        <ul className="pl-4" key={index}>
-                                            <li className="text-sm font-light">{area}</li>
-                                        </ul>
-                                    ))}
                                 </ul>
                                 <div className="flex flex-col gap-2">
                                     {/* Button to redirect */}

@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import Chart from "./component/chart";
 import Pichart from "./component/pieChart"
-import TableTr from "./component/table"
 import Table from "./component/tableAdv/table";
 import { ScrollArea } from "@/components/ui/scroll-area"
+import Link from "next/link";
 
 const Advetise: React.FC = () => {
     return (
@@ -19,9 +19,12 @@ const Advetise: React.FC = () => {
                         </p>
                     </div>
                     <div className="flex justify-center mt-4">
-                        <Button className="bg-indigo-600 text-white px-6 py-2 rounded-md shadow-md hover:bg-indigo-500 transition duration-200">
+                        <Link
+                            href={`advertise/create-ad`}
+                            className="bg-indigo-600 text-white px-6 py-2 rounded-md shadow-md hover:bg-indigo-500 transition duration-200"
+                        >
                             Get Started
-                        </Button>
+                        </Link>
                     </div>
                 </div>
 
