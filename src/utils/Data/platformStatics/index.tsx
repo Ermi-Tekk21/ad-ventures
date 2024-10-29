@@ -14,3 +14,10 @@ export const MonthlySubscribersBrowserStatics = [
     { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
     { browser: "other", visitors: 190, fill: "var(--color-other)" },
   ]
+
+
+export const DriversStat = [
+    { value: "1200+", label: "drivers" },
+    { value: "1500+", label: "Ads" },
+    { value: "189+", label: "clients" }
+]

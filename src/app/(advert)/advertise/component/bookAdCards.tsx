@@ -73,7 +73,6 @@ export function CarouselSpacing({ adType }: CarouselSpacingProps) {
                 </CarouselContent>
             )}
 
-
             <div className="absolute gap-28 flex bg-slate-50 right-14 -bottom-10">
                 <CarouselPrevious />
                 <CarouselNext />

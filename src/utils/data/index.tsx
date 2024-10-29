@@ -49,7 +49,7 @@ export const BiboardPackagesm = [
   }
 ]
 
-export const TaxiPackagesmm = [
+export const TaxiPackages = [
   {
     name: "Starter Package",
     price: "$49 / month",
