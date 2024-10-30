@@ -56,19 +56,19 @@ const Page: React.FC = () => {
                             onClick={handleToggleActiveBillboards}
                             className={isActiveBillboards ? "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600" : "bg-gray-300 text-gray-800 hover:bg-gray-400 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600"}
                         >
-                            Active Billboards
+                            <span className="max-md:text-sm">Active</span>
                         </Button>
                         <Button
                             onClick={handleToggleInactiveBillboards}
                             className={isInactiveBillboards ? "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600" : "bg-gray-300 text-gray-800 hover:bg-gray-400 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600"}
                         >
-                            Inactive Billboards
+                            <span className="max-md:text-sm">Inactive</span>
                         </Button>
                         <Button
                             onClick={handleToggleAddNewBillboard}
                             className={isAddNewBillboard ? "bg-green-600 text-white hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600" : "bg-gray-300 text-gray-800 hover:bg-gray-400 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600"}
                         >
-                            Create a Billboard
+                            <span className="max-md:text-sm">Create</span>
                         </Button>
                     </div>
 

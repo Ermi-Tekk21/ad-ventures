@@ -1,22 +1,4 @@
 "use client";
-
-<<<<<<< HEAD
-import CreateAd from "@/app/(advert)/advertise/create-ad/page";
-import { ScrollArea } from "@/components/ui/scroll-area";
-
-const Page: React.FC = () => {
-
-    return (
-        <div className="flex flex-col items-center">
-            <ScrollArea className="h-screen w-full  pt-16 rounded-lg shadow-xl  bg-gray-50 dark:bg-gray-900">
-                <CreateAd/>
-            </ScrollArea>
-        </div>
-    );
-};
-
-export default Page;
-=======
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -58,7 +40,7 @@ const AdDetails: React.FC = () => {
                                 ? "bg-slate-800 text-white border-slate-100 border-2 font-semibold shadow-lg dark:hover:text-slate-800"
                                 : "font-serif bg-slate-700 dark:text-slate-300 dark:hover:text-slate-800"
                                 }`}
-                        >   
+                        >
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a19b9b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-tv"><rect width="20" height="15" x="2" y="7" rx="2" ry="2" /><polyline points="17 2 12 7 7 2" /></svg>
                             <p>Billbord</p>
                         </Button>
@@ -74,7 +56,7 @@ const AdDetails: React.FC = () => {
                         </Button>
                     </div>
                 </div>
-                <div className="p-10 w-full">
+                <div className="p-10 w-full">   
                     <CarouselSpacing adType={selectedTypeOfAd} />
                 </div>
             </ScrollArea>
@@ -83,4 +65,3 @@ const AdDetails: React.FC = () => {
 };
 
 export default AdDetails;
->>>>>>> 6961dd086222107ae4a619b2347730a3b42581e9

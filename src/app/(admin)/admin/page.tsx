@@ -28,7 +28,7 @@ const Advetise: React.FC = () => {
     }, []);
     return (
         <main className="z-10">
-            <ScrollArea className="h-screen w-full px-14 pt-16 rounded-md border">
+            <ScrollArea className="h-screen w-full md:px-14 max-md:px-4 pt-16 rounded-md border">
                 <div className="bg-indigo-800 dark:bg-opacity-20 bg-opacity-15 rounded-md w-full mt-6 p-10 shadow-lg transition-transform transform hover:scale-105 duration-300">
                     <div className="text-center">
                         <h1 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 mb-1">
@@ -43,7 +43,7 @@ const Advetise: React.FC = () => {
                             AdVentures Statistical Data
                         </h1>
                     </div>
-                    <div className="flex items-center gap-6 p-5">
+                    <div className="flex max-md:flex-col items-center gap-6 md:p-5">
                         <div className="w-full"><Chart /></div>
                         <div className="w-full"><Pichart /></div>
                     </div>
