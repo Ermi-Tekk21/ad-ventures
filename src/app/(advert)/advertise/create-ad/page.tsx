@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 const CreateAd: React.FC = () => {
-    const [selectedTypeOfAd, setTypeAd] = useState("bilboard");
+    const [selectedTypeOfAd, setTypeAd] = useState("billboard");
 
     const handleAdTypeChange = (type: string) => {
         setTypeAd(type);
@@ -15,10 +15,10 @@ const CreateAd: React.FC = () => {
     return (
         <main className="z-10">
             <ScrollArea className="h-screen flex flex-col justify-center items-center text-black dark: w-full pt-16 rounded-md border">
-                {selectedTypeOfAd === "bilboard" && (
+                {selectedTypeOfAd === "billboard" && (
                     <div className="flex gap-5 items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 24 24" fill="none" stroke="#a19b9b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-tv"><rect width="20" height="15" x="2" y="7" rx="2" ry="2" /><polyline points="17 2 12 7 7 2" /></svg>
-                        <p className="text-3xl font-serif dark:text-slate-200">Bilboard</p>
+                        <p className="text-3xl font-serif dark:text-slate-200">Billboard</p>
                     </div>
 
                 )}
@@ -36,14 +36,14 @@ const CreateAd: React.FC = () => {
                     </h1>
                     <div className="flex gap-2 bg-slate-400 px-3 py-2 rounded-md">
                         <Button
-                            onClick={() => handleAdTypeChange("bilboard")}
-                            className={`flex items-center align-middle gap-2 ${selectedTypeOfAd === "bilboard"
+                            onClick={() => handleAdTypeChange("billboard")}
+                            className={`flex items-center align-middle gap-2 ${selectedTypeOfAd === "billboard"
                                 ? "bg-slate-800 text-white border-slate-100 border-2 font-semibold shadow-lg dark:hover:text-slate-800"
                                 : "font-serif bg-slate-700 dark:text-slate-300 dark:hover:text-slate-800"
                                 }`}
-                        >
+                        >   
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a19b9b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-tv"><rect width="20" height="15" x="2" y="7" rx="2" ry="2" /><polyline points="17 2 12 7 7 2" /></svg>
-                            <p>Bilbord</p>
+                            <p>Billbord</p>
                         </Button>
                         <Button
                             onClick={() => handleAdTypeChange("taxi")}

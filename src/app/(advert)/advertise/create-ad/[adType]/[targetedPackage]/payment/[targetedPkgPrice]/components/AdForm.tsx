@@ -60,7 +60,7 @@ const AdForm = ({ handleNext}: { handleNext: () => void }) => {
                             <FormItem className="">
                                 <FormLabel className="text-slate-900 dark:text-slate-100">Title</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Enter advertisement title" className="dark:border-slate-400" {...field} />
+                                    <Input placeholder="Enter advertisement title" className="dark:border-slate-400 text-slate-600 dark:text-slate-100" {...field} />
                                 </FormControl>
                                 <FormDescription>
                                     The title of your advertisement.
@@ -78,7 +78,7 @@ const AdForm = ({ handleNext}: { handleNext: () => void }) => {
                             <FormItem>
                                 <FormLabel className="text-slate-900 dark:text-slate-100">Description</FormLabel>
                                 <FormControl>
-                                    <Textarea placeholder="Enter advertisement description" className="dark:border-slate-400" {...field} />
+                                    <Textarea placeholder="Enter advertisement description" className="dark:border-slate-400 text-slate-600 dark:text-slate-100" {...field} />
                                 </FormControl>
                                 <FormDescription>
                                     A short description of your advertisement.

@@ -80,6 +80,21 @@ const Sidebar: React.FC = () => {
                         <Link href={`/admin/packages`}>Packages</Link>
                     </li>
 
+                    {/* Users */}
+                    <li className={`flex gap-2 ${pathname === "/admin/users" ? "font-bold" : "font-light"}`}>
+                        {pathname === "/admin/users" && (
+                            <hr className="-ml-4 dark:border-slate-400 border-slate-800 border-4 h-6" />
+                        )}
+                        <svg xmlns="http://www.w3.org/2000/svg" className="lucide lucide-users" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <circle cx="16" cy="3" r="4" />
+                        </svg>
+                        <Link href={`/admin/users`}>Users</Link>
+                    </li>
+
+
                 </ul>
             </div>
         </div>

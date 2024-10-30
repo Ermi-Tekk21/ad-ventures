@@ -1,5 +1,6 @@
 import create from 'zustand';
-import { mockNotifications } from '@/utils/data/driver/driverNotification';
+import { DriverNotifications } from '@/utils/Data/DriversData';
+
 // Define Zustand store
 interface Notification {
     id: number;
@@ -15,7 +16,7 @@ interface NotificationsState {
 }
 
 const useNotificationsStoreForDriver = create<NotificationsState>((set) => ({
-    notifications: mockNotifications, // Initial notifications
+    notifications: DriverNotifications, // Initial notifications
 
     // Function to mark a notification as read
     markAsRead: (id: number) =>

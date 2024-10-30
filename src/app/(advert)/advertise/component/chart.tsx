@@ -2,9 +2,8 @@
 
 import { ChartContainer, ChartLegend, ChartLegendContent, type ChartConfig } from "@/components/ui/chart"
 import { ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
-
+import { MonthlySubscribersStatics } from "@/utils/Data/platformStatics"
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
-
 const chartConfig = {
     desktop: {
         label: "Desktop",
@@ -17,21 +16,13 @@ const chartConfig = {
 } satisfies ChartConfig
 
 const Chart: React.FC = () => {
-    const chartData = [
-        { month: "January", desktop: 186, mobile: 80 },
-        { month: "February", desktop: 305, mobile: 200 },
-        { month: "March", desktop: 237, mobile: 120 },
-        { month: "April", desktop: 73, mobile: 190 },
-        { month: "May", desktop: 209, mobile: 130 },
-        { month: "June", desktop: 214, mobile: 140 },
-    ]
 
     return (
         <main>
             <div className="">
-
                 <ChartContainer config={chartConfig} className="h-1/2 w-full">
-                    <BarChart accessibilityLayer data={chartData}>
+                    <BarChart accessibilityLayer data={MonthlySubscribersStatics
+                    }>
                         <CartesianGrid vertical={false} />
                         <XAxis
                             dataKey="month"
@@ -47,7 +38,6 @@ const Chart: React.FC = () => {
                     </BarChart>
                 </ChartContainer>
                 <p className="font-light  text-slate-700 dark:text-slate-500 text-center border-[0.5px] border-slate-500 dark:border-slate-100 text-sm rounded-sm px-3 ">Monthly subscriber to our platform</p>
-
             </div>
         </main>
     )

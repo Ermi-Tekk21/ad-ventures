@@ -1,6 +1,6 @@
 "use client"
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { userInfo } from "@/utils/data/BookAdAccountData";
+import { userInfo } from "@/utils/Data/UsersData/index";
 import { EditProfile } from "./components/EditProfile";
 import { Button } from "@/components/ui/button";
 

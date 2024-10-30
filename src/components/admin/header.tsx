@@ -14,7 +14,7 @@ import Link from "next/link";
 const Header: React.FC = () => {
     return (
         <div className="z-40 fixed w-full">
-            <div className="dark:bg-sidebarBg bg-white w-full h-16 md:-ml-[211px] shadow flex items-center justify-end">
+            <div className="dark:bg-sidebarBg bg-white w-full h-16 md:-ml-[211px] shadow flex items-center justify-end pr-10">
                 <div className="flex gap-10 items-center px-10">
                     <ModeToggle />
                     <div className="z-40 items-center max-md:hidden rounded-full">
@@ -61,7 +61,7 @@ const Header: React.FC = () => {
                                             <polyline points="16 17 21 12 16 7" />
                                             <line x1="21" x2="9" y1="12" y2="12" />
                                         </svg>
-                                        <Link href={`/`}>Logout</Link>
+                                        <Link href={`/auth/drivers/login`}>Logout</Link>
                                     </div>
                                 </DropdownMenuItem>
                             </DropdownMenuContent>
