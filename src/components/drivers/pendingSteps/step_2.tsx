@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import { availableDates } from "@/utils/data/admin/availabelsDates";
+import { availableDates } from "@/utils/Data/AdminData";
 
 // Zod schema for form validation
 const formSchema = z.object({

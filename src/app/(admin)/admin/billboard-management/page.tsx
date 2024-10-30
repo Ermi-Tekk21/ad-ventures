@@ -1,11 +1,11 @@
 "use client";
 
+import { DisplayLocation } from "@/components/advertise/displayLocation";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { BiboardPackages } from "@/utils/data";
-import { BillboardsData } from "@/utils/data/admin/BillboardsData/BillboardsData";
+import { BillboardPackages } from "@/utils/Data/BillboardPackagesDetail";
+import { BillboardsData } from "@/utils/Data/BillboardsData";
 import { useState } from "react";
-
 
 const Page: React.FC = () => {
     const [isActiveBillboards, setIsActiveBillboards] = useState(true);
@@ -81,8 +81,10 @@ const Page: React.FC = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {BillboardsData.filter(b => b.status === 'active').map(billboard => (
                                 <div key={billboard.id} className="p-4 border rounded-lg shadow hover:shadow-lg transition-shadow duration-300 bg-gray-50 dark:bg-gray-700">
-                                    <h3 className="font-bold text-gray-900 dark:text-gray-100">{billboard.location}</h3>
-                                    <p className="text-gray-600 dark:text-gray-300">Screen Size: {billboard.screenSize}</p>
+                                    <h3 className="font-bold text-gray-900 dark:text-gray-100"><span className="font-mono text-slate-400">Ad assigned:</span> {billboard.adAssigned}</h3>
+                                    <p className="text-gray-600 dark:text-gray-300">Screen Size: {billboard.size}</p>
+                                    <p className="text-gray-600 dark:text-gray-300">packageAssignedId: {billboard.packageAssignedId}</p>
+                                    <DisplayLocation location={billboard.placement} />
                                 </div>
                             ))}
                         </div>
@@ -94,8 +96,9 @@ const Page: React.FC = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {BillboardsData.filter(b => b.status === 'inactive').map(billboard => (
                                 <div key={billboard.id} className="p-4 border rounded-lg shadow hover:shadow-lg transition-shadow duration-300 bg-gray-50 dark:bg-gray-700">
-                                    <h3 className="font-bold text-gray-900 dark:text-gray-100">{billboard.location}</h3>
-                                    <p className="text-gray-600 dark:text-gray-300">Screen Size: {billboard.screenSize}</p>
+                                    <h3 className="font-bold text-gray-900 dark:text-gray-100"><span className="font-mono text-slate-400">Id:</span> {billboard.id}</h3>
+                                    <p className="text-gray-600 dark:text-gray-300">Screen Size: {billboard.size}</p>
+                                    <DisplayLocation location={billboard.placement} />
                                 </div>
                             ))}
                         </div>
@@ -133,8 +136,8 @@ const Page: React.FC = () => {
                                 required
                                 className="w-full p-2 border rounded-md bg-gray-50 dark:bg-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
                             >{
-                                    BiboardPackages.map((pkg, index) => (
-                                        <option key={index} value={pkg.name}>{pkg.name}</option>
+                                    BillboardPackages.map((pkg, index) => (
+                                        <option key={index} value={pkg.type}>{pkg.type}</option>
                                     ))
                                 }
                             </select>

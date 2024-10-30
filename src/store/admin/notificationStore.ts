@@ -1,7 +1,8 @@
 import create from 'zustand';
-import { mockNotifications } from '@/utils/data/admin/notificationData'; // Import the mock notifications data
+import { AdminMockNotifications } from '@/utils/Data/AdminData';
 
 interface Notification {
+    type: any;
     id: number;
     message: string; // Removed the type property
     createdAt: string;
@@ -16,7 +17,7 @@ interface NotificationState {
 }
 
 export const useNotificationStore = create<NotificationState>((set) => ({
-    notifications: mockNotifications, // Initialize with mock notifications
+    notifications: AdminMockNotifications, // Initialize with mock notifications
 
     markAsRead: (id) => 
         set((state) => ({

@@ -1,10 +1,11 @@
 "use client"
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
-import { userInfo } from "@/utils/data/driver/driverData";
 import { EditProfile } from "@/app/(advert)/advertise/account/components/EditProfile";
+import { DriversData } from "@/utils/Data/DriversData";
 
 const DriverAccount: React.FC = () => {
+    const userInfo = DriversData[0];
     return (
         <main className="z-10 dark:bg-indigo-950">
             <ScrollArea className="h-screen w-full pt-16 rounded-md border">
@@ -70,31 +71,35 @@ const DriverAccount: React.FC = () => {
                             <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
                                 Packages Assigned to the Driver (You)
                             </h3>
-
                             {/* Flex container for the packages */}
                             <div className="flex justify-center flex-wrap gap-4">
                                 {userInfo.pkgDrInvolvedIn.map((pkg, index) => (
-                                    <li
+                                    <div
                                         key={index}
                                         className="flex-1 min-w-[250px] max-w-[350px] p-4 bg-gray-50 dark:bg-indigo-950 shadow-lg rounded-lg 
                    hover:bg-indigo-100 dark:hover:bg-indigo-800 transition-colors duration-300 border dark:border-gray-700"
                                     >
                                         <div className="flex flex-col space-y-2">
                                             <div className="text-indigo-600 dark:text-indigo-300 font-semibold text-lg">
-                                                {pkg.name}
+                                                {pkg.type}
                                             </div>
                                             <div className="text-gray-600 dark:text-gray-400 text-sm">
-                                                {pkg.description || "This is a sample description of the package."}
+                                                <ol>
+                                                    <strong>working areas</strong>
+                                                    {pkg.workAreaofTaxi.map((area, index) => (
+                                                        <li className="pl-3" key={index}>
+                                                            {area}
+                                                        </li>
+                                                    ))}
+                                                </ol>
+
                                             </div>
                                         </div>
-                                    </li>
+                                    </div>
                                 ))}
                             </div>
                         </div>
-
                     </div>
-
-
                 </div>
             </ScrollArea>
         </main>

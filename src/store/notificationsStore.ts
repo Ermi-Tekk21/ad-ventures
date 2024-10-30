@@ -1,5 +1,5 @@
+import NotificationsData from '@/utils/Data/UsersData';
 import create from 'zustand';
-import NotificationsData from '@/utils/data/BookAdAccountData';
 
 // Define Zustand store
 interface Notification {
