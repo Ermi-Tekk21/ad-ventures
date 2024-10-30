@@ -54,7 +54,7 @@ const Pichart = () => {
   }, [])
 
   return (
-    <Card className="flex flex-col">
+    <Card className="flex flex-col max-md:hidden">
       <div className="flex max-md:flex-col items-center">
         <CardHeader className="items-center pb-0">
           <CardTitle>our visitors</CardTitle>
@@ -90,7 +90,7 @@ const Pichart = () => {
                           <tspan
                             x={viewBox.cx}
                             y={viewBox.cy}
-                            className="fill-foreground text-3xl font-bold"
+                            className="fill-foreground text-3xl max-md:text-sm font-bold"
                           >
                             {totalVisitors.toLocaleString()}
                           </tspan>
