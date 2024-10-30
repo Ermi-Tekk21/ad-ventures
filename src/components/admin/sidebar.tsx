@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useNotificationStore } from '@/store/admin/notificationStore';
-import useNotificationsStoreForDriver from "@/store/driversNotification";
 
 const Sidebar: React.FC = () => {
     const { notifications } = useNotificationStore();

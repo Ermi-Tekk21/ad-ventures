@@ -10,12 +10,14 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 import Link from "next/link";
+import { ResSidebar } from "./RisSidebar";
 
 const Header: React.FC = () => {
     return (
         <div className="z-40 fixed w-full">
             <div className="dark:bg-sidebarBg bg-white w-full h-16 md:-ml-[211px] shadow flex items-center justify-end pr-10">
-                <div className="flex gap-10 items-center px-10">
+                <div className="flex gap-10 items-center">
+                    <ResSidebar/>
                     <ModeToggle />
                     <div className="z-40 items-center max-md:hidden rounded-full">
                         <DropdownMenu >

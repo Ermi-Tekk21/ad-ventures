@@ -55,7 +55,7 @@ const Pichart = () => {
 
   return (
     <Card className="flex flex-col">
-      <div className="flex items-center">
+      <div className="flex max-md:flex-col items-center">
         <CardHeader className="items-center pb-0">
           <CardTitle>our visitors</CardTitle>
           <CardDescription>this year</CardDescription>
