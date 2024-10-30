@@ -60,10 +60,6 @@ const DriverAccount: React.FC = () => {
                                 <h4 className="font-semibold dark:text-slate-200 text-gray-700">Taxi Specification:</h4>
                                 <p className="text-gray-600 dark:text-slate-300">{userInfo.taxiSpec}</p>
                             </div>
-
-
-
-
                         </div>
                     </div>
                     <div className="mt-8 max-w-4xl w-full bg-white dark:bg-opacity-10 dark:bg-none rounded-lg shadow-md p-6">
