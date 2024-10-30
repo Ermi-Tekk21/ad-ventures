@@ -93,7 +93,7 @@ const TargetedBillboardPkg: React.FC<TargetedBillboardPkgProps> = ({ keyToFindPk
                 </div>
             </div>
             <div className="py-3">
-                <Button onClick={() => window.location.href = `${targetedPkg.type}/payment/${targetedPkg.pricePerMonth}`} className="">proced to payment</Button>
+                <Button className="">Edit</Button>
             </div>
 
         </div>

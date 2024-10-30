@@ -59,7 +59,7 @@ const TargetedTaxiPkg: React.FC<TargetedTaxiPkgProps> = ({ keyToFindPkg }) => {
             </div>
 
             <div className="py-3">
-                <Button onClick={() => window.location.href = `${targetedPkg.type}/payment/${targetedPkg.price}`} className="">proced to payment</Button>
+                <Button className="">Edit</Button>
             </div>
         </div>
     );

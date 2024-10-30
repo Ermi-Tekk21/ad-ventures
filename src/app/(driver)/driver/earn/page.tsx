@@ -1,9 +1,10 @@
 import AdventuresEarningPage from "@/components/drivers/earnSecWhenActive";
 import InitSteps from "@/components/drivers/initSteps";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { userInfo } from "@/utils/data/driver/driverData";
-
+import { DriversData } from "@/utils/Data/DriversData";
+DriversData
 const Page = () => {
+    const userInfo = DriversData[0]
     return (
         <main>
             {userInfo.status === 'pending' && (

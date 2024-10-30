@@ -35,6 +35,7 @@ export const DriversData = [
     hasBillboard: true,
     taxiSpec: "Ford Fusion 2016, Blue",
     status: "pending",
+    BookedDate: {date: "2016-05-11", time: "11:00pm"},
     pkgDrInvolvedIn: [TaxiPackages[0]],
   },
   {
@@ -70,6 +71,7 @@ export const DriversData = [
     workingArea: "Residential Area",
     hasBillboard: true,
     taxiSpec: "Nissan Altima 2017, Gray",
+    BookedDate: {date: "2016-05-11", time: "11:00pm"},
     status: "pending",
     pkgDrInvolvedIn: [TaxiPackages[3]],
   },

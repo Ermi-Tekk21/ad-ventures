@@ -1,5 +1,6 @@
-import { userInfo as initialUserInfo } from "@/utils/data/driver/driverData";
+import { DriversData } from "@/utils/Data/DriversData";
 import { create } from "zustand";
+const initialUserInfo = DriversData[0]
 
 interface userInfo {
     email: string;
