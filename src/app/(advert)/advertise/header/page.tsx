@@ -11,12 +11,14 @@ import {
 
 import { ModeToggle } from "../component/lightModeTog";
 import Link from "next/link";
+import { ResSidebar } from "../sidebar/RisSidebar";
 
 const Header: React.FC = () => {
     return (
         <div className="z-40 fixed w-full">
             <div className="dark:bg-sidebarBg bg-white w-full h-16 md:-ml-[211px] shadow flex items-center justify-end">
                 <div className="flex gap-10 items-center px-10">
+                    <ResSidebar/>
                     <ModeToggle />
                     <div className="z-40 items-center max-md:hidden rounded-full">
                         <DropdownMenu >
