@@ -1,6 +1,3 @@
-import Taxi from "@/app/(driver)/driver/page";
-
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 interface stepZeroProps {

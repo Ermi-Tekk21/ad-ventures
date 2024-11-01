@@ -1,4 +1,4 @@
-import create from 'zustand';
+import { create } from 'zustand';
 import { DriverNotifications } from '@/utils/Data/DriversData';
 
 // Define Zustand store

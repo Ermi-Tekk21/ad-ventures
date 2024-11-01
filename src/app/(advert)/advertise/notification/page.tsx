@@ -2,7 +2,6 @@
 import { ScrollArea } from "@/components/ui/scroll-area";
 import useNotificationsStore from '@/store/notificationsStore'; // Import the Zustand store
 import { DialogDemo } from "./dialog";
-import { Button } from "@/components/ui/button";
 
 const NotificationsPage = () => {
     // Access notifications and the markAsRead function from the Zustand store

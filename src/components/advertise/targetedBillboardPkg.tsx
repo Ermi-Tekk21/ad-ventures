@@ -1,6 +1,7 @@
 import { BillboardPackages } from "@/utils/Data/BillboardPackagesDetail";
 import { DisplayLocation } from "./displayLocation";
 import { Button } from "../ui/button";
+import { usePathname } from "next/navigation";
 
 // Define props interface
 interface TargetedBillboardPkgProps {
@@ -28,8 +29,9 @@ interface BillboardPackage {
 }
 
 const TargetedBillboardPkg: React.FC<TargetedBillboardPkgProps> = ({ keyToFindPkg }) => {
+    const pathname = usePathname()
     console.log("keyToFindPkg: ", keyToFindPkg);
-    
+
     // Find the targeted package by type
     const targetedPkg = BillboardPackages.find((pkg) => pkg.type === keyToFindPkg) as BillboardPackage | undefined;
 
@@ -93,7 +95,13 @@ const TargetedBillboardPkg: React.FC<TargetedBillboardPkgProps> = ({ keyToFindPk
                 </div>
             </div>
             <div className="py-3">
-                <Button className="">Edit</Button>
+                {
+                    pathname.includes("/advertise") ? (
+                        <Button onClick={() => { window.location.href = `${targetedPkg.type}/payment/${targetedPkg.pricePerMonth}` }} className="bg-green-600 text-white hover:font-semibold">Purchase this package</Button>
+                    ) : (
+                        pathname.includes("/admin") && (<Button className="bg-green-600 text-white px-6">Edit</Button>)
+                    )
+                }
             </div>
 
         </div>

@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import Chart from "./component/chart";
 import Pichart from "./component/pieChart"
 import Table from "./component/tableAdv/table";

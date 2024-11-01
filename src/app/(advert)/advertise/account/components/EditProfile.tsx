@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Image from "next/image";
 
 export function EditProfile({
   user,
@@ -36,6 +37,7 @@ export function EditProfile({
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    setBio(bio);
     event.preventDefault();
     const updatedUser = {
       name,
@@ -64,11 +66,12 @@ export function EditProfile({
             <Label htmlFor="profileImage" className="text-center">
               Profile Image
             </Label>
-            <img
-              src={profileImage}
-              alt="Profile"
-              className="w-24 h-24 rounded-full object-cover"
-            />
+            <Image
+            src={profileImage}
+            width={24}
+            height={24}
+            alt="Profile"
+            className="w-24 h-24 rounded-full object-cover"></Image>
             <Input
               id="profileImage"
               type="file"

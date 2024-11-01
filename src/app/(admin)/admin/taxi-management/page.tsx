@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { DriversData } from "@/utils/Data/DriversData";
-import Link from "next/link";
 import { useState } from "react";
 
 const Page: React.FC = () => {
