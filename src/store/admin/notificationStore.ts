@@ -1,4 +1,4 @@
-import create from 'zustand';
+import { create } from 'zustand';
 import { AdminMockNotifications } from '@/utils/Data/AdminData';
 
 interface Notification {
@@ -19,9 +19,9 @@ interface NotificationState {
 export const useNotificationStore = create<NotificationState>((set) => ({
     notifications: AdminMockNotifications, // Initialize with mock notifications
 
-    markAsRead: (id) => 
+    markAsRead: (id) =>
         set((state) => ({
-            notifications: state.notifications.map(notification => 
+            notifications: state.notifications.map(notification =>
                 notification.id === id ? { ...notification, isRead: true } : notification
             ),
         })),

@@ -3,6 +3,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { userInfo } from "@/utils/Data/UsersData/index";
 import { EditProfile } from "./components/EditProfile";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 
 const Account: React.FC = () => {
@@ -14,11 +15,12 @@ const Account: React.FC = () => {
                     <div className="max-w-4xl w-full bg-white  dark:bg-opacity-10 dark:bg-none rounded-lg shadow-md p-8">
                         {/* Profile Header */}
                         <div className="flex flex-col items-center">    
-                            <img
-                                src={userInfo.profileImage}
-                                alt="Profile"
-                                className="w-32 h-32 rounded-full shadow-md mb-4"
-                            />
+                            <Image
+                            src={userInfo.profileImage}
+                            alt="Profile"
+                            width={32}
+                            height={32}
+                            className="w-32 h-32 rounded-full shadow-md mb-4"></Image>
                             <h2 className="text-3xl dark:text-white font-bold text-gray-900">{userInfo.name}</h2>
                             <p className="text-gray-600 dark:text-slate-50 mb-4">{userInfo.email}</p>
                             <p className="text-center dark:text-slate-100 text-gray-700">{userInfo.bio}</p>

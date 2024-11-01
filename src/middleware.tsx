@@ -1,7 +1,7 @@
 // uncomment after intergrating with backend    
 
 import { NextRequest, NextResponse } from 'next/server';
-import { jwtDecode } from 'jwt-decode';
+// import { jwtDecode } from 'jwt-decode';
 
 // const roleRoutes = ['/admin', '/driver', '/advertise'];
 // const protectedRoutes = [...roleRoutes];
@@ -21,6 +21,7 @@ import { jwtDecode } from 'jwt-decode';
 // }
 
 export async function middleware(request: NextRequest) {
+    console.log(request);
 
 
     //   const pathname = request.nextUrl.pathname;

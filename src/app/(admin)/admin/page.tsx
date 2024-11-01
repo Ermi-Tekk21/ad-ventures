@@ -5,7 +5,6 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import Link from "next/link";
 import Chart from "@/app/(advert)/advertise/component/chart";
 import Pichart from "@/app/(advert)/advertise/component/pieChart";
-import { Table } from "@/components/ui/table";
 import { BillboardsData } from "@/utils/Data/BillboardsData";
 import { TaxisData } from "@/utils/Data/TaxisData";
 

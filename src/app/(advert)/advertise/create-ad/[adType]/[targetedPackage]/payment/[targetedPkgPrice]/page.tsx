@@ -1,9 +1,8 @@
 "use client"
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import AdForm from "./components/AdForm";
 import PaymentForm from "./components/PaymentForm";
-import { BillboardPackages } from "@/utils/Data/BillboardPackagesDetail";
 import { Button } from "@/components/ui/button";
 
 

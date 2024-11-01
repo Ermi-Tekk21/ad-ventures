@@ -3,6 +3,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
 import { EditProfile } from "@/app/(advert)/advertise/account/components/EditProfile";
 import { DriversData } from "@/utils/Data/DriversData";
+import Image from "next/image";
 
 const DriverAccount: React.FC = () => {
     const userInfo = DriversData[0];
@@ -14,11 +15,12 @@ const DriverAccount: React.FC = () => {
                         {/* Profile Header */}
                         <div className="flex flex-col items-center">
                             <div className="w-36 h-36 rounded-full shadow-md mb-4 border-4 border-gray-300 flex items-center justify-center">
-                                <img
+                                <Image
                                     src={userInfo.profileImage}
                                     alt="Profile"
-                                    className="w-32 h-32 rounded-full"
-                                />
+                                    width={32}
+                                    height={32}
+                                    className="w-32 h-32 rounded-full"></Image>
                             </div>
 
 

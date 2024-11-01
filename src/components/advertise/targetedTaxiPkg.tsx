@@ -1,5 +1,6 @@
 import { TaxiPackages } from "@/utils/Data/TaxiPackagesDetail";
 import { Button } from "../ui/button";
+import { usePathname } from "next/navigation";
 
 // Define props interface
 interface TargetedTaxiPkgProps {
@@ -18,6 +19,7 @@ interface TaxiPackage {
 const TargetedTaxiPkg: React.FC<TargetedTaxiPkgProps> = ({ keyToFindPkg }) => {
     // Find the targeted taxi package by type
     const targetedPkg = TaxiPackages.find((pkg) => pkg.type === keyToFindPkg) as TaxiPackage | undefined;
+    const pathname = usePathname();
 
     if (!targetedPkg) {
         return (
@@ -59,7 +61,13 @@ const TargetedTaxiPkg: React.FC<TargetedTaxiPkgProps> = ({ keyToFindPkg }) => {
             </div>
 
             <div className="py-3">
-                <Button className="">Edit</Button>
+                {
+                pathname.includes("/advertise") ? (
+                    <Button onClick={() => { window.location.href = `${targetedPkg.type}/payment/${targetedPkg.price}` }} className="bg-green-600 text-white hover:font-semibold">Purchase this package</Button>
+                ) : (
+                    <Button className="bg-green-600 text-white">Edit</Button>
+                )
+                }
             </div>
         </div>
     );
