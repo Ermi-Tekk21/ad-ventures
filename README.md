@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ad Ventures
 
-## Getting Started
+Ad Ventures is an innovative advertising platform that utilizes GPS-based targeting for effective advertising campaigns on taxis and billboards. Built with a powerful tech stack, the platform allows administrators, drivers, and advertisers to manage and engage with advertising content dynamically.
 
-First, run the development server:
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Routes](#routes)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Overview
+Ad Ventures enables targeted advertising by leveraging location data from GPS-enabled devices, providing advertisers with precision-targeted campaigns for maximum reach and engagement. With role-specific functionalities, the platform allows drivers to activate ads, administrators to manage content, and advertisers to deploy ads directly.
+
+## Features
+- **GPS-Based Advertising**: Advertisements can be displayed based on specific geographical locations.
+- **Role-Based Access Control**: Separate functionalities for `admin`, `driver`, and `advertiser` roles.
+- **Interactive Dashboard**: Real-time insights for administrators on ad performance.
+- **Authentication**: Secure login and registration for drivers and advertisers.
+- **Ad Management**: Tools for uploading, updating, and targeting ads.
+  
+## Tech Stack
+- **Frontend**: [Next.js](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), [Zustand](https://zustand.pmnd.rs/) for state management, [Tailwind CSS](https://tailwindcss.com/) for styling.
+- **Deployment**: Hosted on [Vercel](https://vercel.com/) (frontend) and [Render](https://render.com/) (backend).
+
+## Installation
+To run the project locally, clone this repository and install dependencies:
+
+```bash
+git clone https://github.com/yourusername/ad-ventures.git
+cd ad-ventures
+npm install
+```
+
+```
+
+## Usage
+
+### Run the Development Server
+To start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The frontend will be served at `http://localhost:3000` by default, and the backend at `http://localhost:8000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Run Tests
+To run tests for the project:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run test
+```
 
-## Learn More
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Routes
+The application uses both public and protected routes. Here’s a breakdown:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Public Routes
+- **/auth/drivers/login** - Login page for drivers
+- **/auth/drivers/signin** - Sign-up page for drivers
+- **/auth/book-ad/login** - Login page for advertisers
+- **/auth/book-ad/signin** - Sign-up page for advertisers
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Protected Routes
+Accessible only to authenticated users:
+- **/admin** - Admin dashboard
+- **/driver** - Driver’s dashboard
+- **/advertise** - Advertiser’s dashboard
 
-## Deploy on Vercel
+## Contributing
+We welcome contributions! Please follow these steps:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature-name`
+3. Commit changes: `git commit -m 'Add feature'`
+4. Push the branch: `git push origin feature-name`
+5. Open a Pull Request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
