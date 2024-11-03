@@ -27,7 +27,7 @@ export function CarouselSpacing({ adType }: CarouselSpacingProps) {
             {adType === "billboard" && (
                 <CarouselContent className="flex"> {/* Use flex to align the items horizontally */}
                     {BillboardPackages.map((item, index) => (
-                        <CarouselItem key={index} className="flex-none opacity-85 shadow-md w-1/3"> {/* Ensure each item takes 1/3 of the screen */}
+                        <CarouselItem key={index} className="flex-none opacity-85 shadow-md max-md:w-full w-1/3"> {/* Ensure each item takes 1/3 of the screen */}
                             <div className="border border-gray-300 flex flex-col justify-center rounded-lg p-6 bg-white w-full shadow-md">
                                 <h2 className="text-2xl font-bold mb-2 text-gray-800">{item.type}</h2>
                                 <p className="text-xl text-gray-600">{item.pricePerMonth} per month</p>
@@ -52,7 +52,7 @@ export function CarouselSpacing({ adType }: CarouselSpacingProps) {
             {adType === "taxi" && (
                 <CarouselContent className="flex"> {/* Use flex to align the items horizontally */}
                     {TaxiPackages.map((item, index) => (
-                        <CarouselItem key={index} className="flex-none opacity-85 shadow-md w-1/3"> {/* Ensure each item takes 1/3 of the screen */}
+                        <CarouselItem key={index} className="flex-none opacity-85 shadow-md max-md:w-full w-1/3"> {/* Ensure each item takes 1/3 of the screen */}
                             <div className="border border-gray-300 flex flex-col justify-center rounded-lg p-6 bg-white w-full shadow-md">
                                 <h2 className="text-2xl font-bold mb-2 text-gray-800">{item.type}</h2>
                                 <p className="text-xl text-gray-600">{item.price} per month</p>

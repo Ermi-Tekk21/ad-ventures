@@ -29,8 +29,8 @@ const AdDetails: React.FC = () => {
                     </div>
                 )}
 
-                <div className="flex items-center gap-10 justify-between">
-                    <h1 className="text-4xl font-extrabold text-slate-800 from-accent-foreground dark:text-white">
+                <div className="flex max-md:flex-col items-center gap-10 justify-between">
+                    <h1 className="text-4xl max-md:text-center font-extrabold text-slate-800 from-accent-foreground dark:text-white">
                         Ad Packages under AdVentures
                     </h1>
                     <div className="flex gap-2 bg-slate-400 px-3 py-2 rounded-md">
