@@ -22,6 +22,7 @@
     "@radix-ui/react-slot": "^1.1.0",
     "@react-google-maps/api": "^2.19.3",
     "@tanstack/react-table": "^8.20.5",
+    "antd": "^5.21.6",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
@@ -42,6 +43,7 @@
     "zustand": "^4.5.5"
   },
   "devDependencies": {
+    "@types/antd": "^1.0.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

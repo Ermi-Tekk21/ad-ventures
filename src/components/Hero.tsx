@@ -20,7 +20,6 @@ import Link from "next/link"
 import AboutUsImage from "@/public/asset/ad-4.jpg"
 import { Testimonials, Trusted } from "@/utils/Data/LandingData/index"
 
-
 const Hero: React.FC = () => {
     return (
         <main className="flex flex-col max-md:px-2 gap-10">
@@ -41,7 +40,7 @@ const Hero: React.FC = () => {
 
                             {/* Carousel Section */}
                             <div className="w-full md:w-1/2 h-full max-md:mt-20">
-                                <Carousel>
+                                <Carousel >
                                     <CarouselContent className="opacity-80">
                                         <CarouselItem>
                                             <Image
@@ -160,35 +159,31 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Trusted by section */}
-            <div className="md:px-16 max-md:p-4">
-                <div className="trustedBy w-full bg-navBg rounded-lg opacity-90">
-                    <p className="text-center text-3xl font-bold p-5 text-white">Trusted by</p>
-                    {/* testimonial */}
-                    <div className="flex justify-center">
-                        
-                        <Carousel className="w-4/5">  {/* Full width and height */}
-                        <CarouselContent className="flex">  {/* Use flex to align the items horizontally */}
-                            {Trusted.map((item) => (
-                                <CarouselItem key={item.id} className="flex-none w-1/ 3"> {/* Ensure each item takes 1/3 of the screen */}
-                                    <div className="h-full py-8 px-6 max-sm:py-2">  {/* Padding adjusted for spacing */}
-                                        <div className="py-6">
-                                            <Image
-                                                width={150}
-                                                height={100}
-                                                className="rounded-full max-md:w-36 right-0 left-0 mx-auto -top-7"
-                                                src={item.image}
-                                                alt="image"
-                                            />
-                                        </div>
-                                    </div>
-                                </CarouselItem>
-                            ))}
-                        </CarouselContent>
-                        <CarouselPrevious />
-                        <CarouselNext />
-                    </Carousel>
+            <div className="trustedBy w-full overflow-clip bg-navBg rounded-lg opacity-90">
+                <p className="text-center text-3xl font-bold p-5 text-white">Trusted by</p>
+                {/* testimonial */}
+                <div className="flex w-3/4 justify-center">
 
-                    </div>
+                    {Trusted.map((item) => (
+                        <div key={item.id} className="flex-none animate-move-left-right w-1/ 3"> {/* Ensure each item takes 1/3 of the screen */}
+                            <div className="h-full py-8 px-6 max-sm:py-2">  {/* Padding adjusted for spacing */}
+                                <div className="py-6">
+                                    <Image
+                                        width={150}
+                                        height={100}
+                                        className="rounded-full max-md:w-36 right-0 left-0 mx-auto -top-7"
+                                        src={item.image}
+                                        alt="image"
+                                    />
+
+                                    <p className="text-white text-center">
+                                        <strong>{item.name}</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+
                 </div>
             </div>
 
@@ -239,12 +234,12 @@ const Hero: React.FC = () => {
                                 <div className="h-full p-8">  {/* Padding adjusted for spacing */}
                                     <div className="w-full p-6 rounded-lg mx-auto shadow-[0_4px_14px_-6px_rgba(93,96,127,0.4)] bg-white relative">
                                         <Image
-                            src={person.image} // Replace with your actual image path
-                            alt="About Us"
-                            className="w-14 h-14 rounded-full absolute right-0 left-0 mx-auto -top-7 shadow-lg"
-                            width={500} // Adjust width as needed
-                            height={200} // Adjust height as needed
-                        />
+                                            src={person.image} // Replace with your actual image path
+                                            alt="About Us"
+                                            className="w-14 h-14 rounded-full absolute right-0 left-0 mx-auto -top-7 shadow-lg"
+                                            width={500} // Adjust width as needed
+                                            height={200} // Adjust height as needed
+                                        />
                                         <div className="mt-6 text-center">
                                             <p className="text-sm text-gray-800 leading-relaxed">{person.description}</p>
                                         </div>
